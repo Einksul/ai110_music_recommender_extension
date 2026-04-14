@@ -25,10 +25,11 @@ class UserProfile:
     likes_acoustic: bool = False
     
     # Adjustable weights for the scoring algorithm
+    # Experiment: Double Energy (0.2), Halve Genre (0.175)
     weights: Dict[str, float] = field(default_factory=lambda: {
-        "genre": 0.35,
+        "genre": 0.175,
         "mood": 0.25,
-        "energy": 0.1,
+        "energy": 0.2,
         "tempo": 0.1,
         "valence": 0.05,
         "acousticness": 0.1,

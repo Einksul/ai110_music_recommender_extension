@@ -15,32 +15,40 @@ from recommender import load_songs, recommend_songs
 def main() -> None:
     songs = load_songs("data/songs.csv") 
 
-    # Starter example profile
-    user_prefs = {
-        "genre": "pop", 
-        "mood": "happy", 
-        "energy": 0.8,
-        "tempo": 120,
-        "valence": 0.8
-    }
+    test_profiles = [
+        {
+            "name": "The High-Energy Classical (Adversarial)",
+            "genre": "classical", "mood": "intense", "energy": 0.95, "tempo": 150, "valence": 0.1, "likes_acoustic": False
+        },
+        {
+            "name": "The Acoustic Metalhead (Edge Case)",
+            "genre": "metal", "mood": "chill", "energy": 0.2, "tempo": 70, "valence": 0.5, "likes_acoustic": True
+        },
+        {
+            "name": "The Minimalist (Edge Case)",
+            "genre": "", "mood": "", "energy": 0.5, "tempo": 100, "valence": 0.5, "likes_acoustic": False
+        },
+        {
+            "name": "The Ultra-Specific Niche",
+            "genre": "reggae", "mood": "sad", "energy": 0.3, "tempo": 75, "valence": 0.2, "likes_acoustic": True
+        }
+    ]
 
-    recommendations = recommend_songs(user_prefs, songs, k=5)
+    for profile in test_profiles:
+        name = profile.pop("name")
+        recommendations = recommend_songs(profile, songs, k=5)
 
-    print("\n" + "="*50)
-    print(" 🎵  YOUR PERSONALIZED MUSIC RECOMMENDATIONS  🎵 ")
-    print("="*50)
-    print(f"Target Vibe: {user_prefs['genre'].title()} / {user_prefs['mood'].title()}\n")
+        print("\n" + "="*60)
+        print(f" PROFILE: {name} ")
+        print("="*60)
+        print(f"Params: {profile}\n")
 
-    for i, rec in enumerate(recommendations, 1):
-        song, score, explanation = rec
-        
-        print(f"{i}. {song['title'].upper()}")
-        print(f"   Artist: {song['artist']}")
-        print(f"   Score:  [{score:.2f} / 1.00]")
-        print(f"   Reason: {explanation}")
-        print("-" * 50)
-
-    print("\nEnjoy your music!\n")
+        for i, rec in enumerate(recommendations, 1):
+            song, score, explanation = rec
+            print(f"{i}. {song['title'].upper()} ({song['genre']} / {song['mood']})")
+            print(f"   Score:  [{score:.2f} / 1.00]")
+            print(f"   Reason: {explanation}")
+            print("-" * 60)
 
 
 if __name__ == "__main__":

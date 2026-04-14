@@ -74,15 +74,53 @@ Run the starter tests with:
 pytest
 ```
 
+### Sample Output
+
+The following terminal output demonstrates the recommendations for a "Pop / Happy" user profile:
+
+```text
+==================================================
+ 🎵  YOUR PERSONALIZED MUSIC RECOMMENDATIONS  🎵 
+==================================================
+Target Vibe: Pop / Happy
+
+1. SUNRISE CITY
+   Artist: Neon Echo
+   Score:  [0.97 / 1.00]
+   Reason: Because it matches your favorite genre (pop) and it aligns with your current mood (happy) and the energy level is exactly what you're looking for.
+--------------------------------------------------
+2. SUMMER GROOVE
+   Artist: Pop Star
+   Score:  [0.96 / 1.00]
+   Reason: Because it matches your favorite genre (pop) and it aligns with your current mood (happy) and the energy level is exactly what you're looking for.
+--------------------------------------------------
+3. GYM HERO
+   Artist: Max Pulse
+   Score:  [0.71 / 1.00]
+   Reason: Because it matches your favorite genre (pop).
+--------------------------------------------------
+4. ROOFTOP LIGHTS
+   Artist: Indigo Parade
+   Score:  [0.60 / 1.00]
+   Reason: Because it aligns with your current mood (happy) and the energy level is exactly what you're looking for.
+--------------------------------------------------
+5. CLOUD NINE
+   Artist: LoRoom
+   Score:  [0.48 / 1.00]
+   Reason: Because it aligns with your current mood (happy).
+--------------------------------------------------
+```
+
 You can add more tests in `tests/test_recommender.py`.
 
 ---
 
 ## Experiments You Tried
 
-- **Numerical Sensitivity**: Added `acousticness` and `danceability` to the scoring logic. This significantly improved differentiation between "Ambient Chill" and "Lofi Chill" by penalizing high-energy electronic textures in acoustic-focused profiles.
-- **Categorical vs. Numerical Weighting**: Balanced the weights (0.6 categorical, 0.4 numerical) to ensure that a song can still rank in the top 5 even if it's the wrong genre, provided its "vibe" (energy/tempo) is a perfect match.
-- **Explanation Logic**: Refined the natural language generator to only mention features that have a high "closeness" score (>0.9), making the reasoning feel more human and less like a list of variables.
+- **Weighting Shift (Energy vs. Genre)**: Doubled Energy weight (0.2) and halved Genre weight (0.175).
+  - **Result**: The system became much more responsive to the "vibe" of the song. In the "Acoustic Metalhead" test, low-energy Lofi tracks successfully outranked high-energy Metal tracks.
+  - **Conclusion**: This is "more accurate" for mood-based discovery but can lead to "genre-blindness" where the system ignores a user's explicit categorical preference.
+- **Numerical Sensitivity**: Added `acousticness` and `danceability` to the scoring logic.
 
 ---
 

@@ -64,16 +64,19 @@ Contains unit tests to ensure the validity of the recommendation logic and data 
 - **Pros**: High discovery/serendipity, doesn't need song metadata.
 - **Cons**: "Cold start" problem for new users/items.
 
-## Proposed Data Model Expansion
+## Stress Test Analysis
 
-### 1. Song Metadata (Current `songs.csv`)
-- **Content features**: `id`, `title`, `artist`, `genre`, `mood`, `energy`, `tempo_bpm`, `valence`, `danceability`, `acousticness`.
+### 1. High-Energy Classical (Adversarial)
+- **Scenario**: User wants high-energy, intense classical.
+- **Outcome**: System recommended High-Energy Rock/Metal.
+- **Insight**: Confirms that when a specific categorical-numerical combination is missing, the system prioritizes "vibe" (energy/mood) over "genre."
 
-### 2. User Interaction Data (Collaborative)
-- **`Likes`**: Binary (True/False) or scale (1-5). Crucial for explicit feedback.
-- **`Skips`**: Implicit negative feedback. Frequent skips should lower a song's score.
-- **`Playlists`**: Groups of songs that users think "belong" together. High signal for item-item similarity.
+### 2. Acoustic Metalhead (Edge Case)
+- **Scenario**: User wants low-energy, acoustic metal.
+- **Outcome**: A tie/split between Lofi (vibe match) and Metal (genre match).
+- **Insight**: Validates the 60/40 split between categorical and numerical weighting.
 
-### 3. Temporal/Contextual Data
-- **`Timestamp`**: When was the song played? (Helps with recency bias).
-- **`Mood`**: Dynamic user mood vs. static song mood.
+### 3. Minimalist (Edge Case)
+- **Scenario**: No genre/mood provided.
+- **Outcome**: Low-score recommendations based on numerical defaults.
+- **Insight**: Highlights the system's reliance on categorical data for high-confidence scores.
