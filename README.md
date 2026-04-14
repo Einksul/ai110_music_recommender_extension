@@ -80,11 +80,9 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
-
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+- **Numerical Sensitivity**: Added `acousticness` and `danceability` to the scoring logic. This significantly improved differentiation between "Ambient Chill" and "Lofi Chill" by penalizing high-energy electronic textures in acoustic-focused profiles.
+- **Categorical vs. Numerical Weighting**: Balanced the weights (0.6 categorical, 0.4 numerical) to ensure that a song can still rank in the top 5 even if it's the wrong genre, provided its "vibe" (energy/tempo) is a perfect match.
+- **Explanation Logic**: Refined the natural language generator to only mention features that have a high "closeness" score (>0.9), making the reasoning feel more human and less like a list of variables.
 
 ---
 
@@ -185,6 +183,43 @@ Some prompts:
 - Does it treat all users as if they have the same taste shape
 - Is it biased toward high energy or one genre by default
 - How could this be unfair if used in a real product
+
+---
+
+## 7. Evaluation
+
+How did you check your system
+
+Examples:
+- You tried multiple user profiles and wrote down whether the results matched your expectations
+- You compared your simulation to what a real app like Spotify or YouTube tends to recommend
+- You wrote tests for your scoring logic
+
+You do not need a numeric metric, but if you used one, explain what it measures.
+
+---
+
+## 8. Future Work
+
+If you had more time, how would you improve this recommender
+
+Examples:
+
+- Add support for multiple users and "group vibe" recommendations
+- Balance diversity of songs instead of always picking the closest match
+- Use more features, like tempo ranges or lyric themes
+
+---
+
+## 9. Personal Reflection
+
+A few sentences about what you learned:
+
+- What surprised you about how your system behaved
+- How did building this change how you think about real music recommenders
+- Where do you think human judgment still matters, even if the model seems "smart"
+
+ this be unfair if used in a real product
 
 ---
 
