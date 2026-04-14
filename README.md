@@ -158,8 +158,6 @@ Read and complete the Model Card for a full technical and ethical breakdown of t
 
 [**🎧 View Model Card (model_card.md)**](model_card.md)
 
-### What was learned
-Through this project, I discovered that recommendation is a delicate balancing act...
 
 
 ---
