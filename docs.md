@@ -1,7 +1,7 @@
 # Music Recommender Simulation Documentation
 
 ## Infrastructure Overview
-The system is designed with both functional and object-oriented approaches to handle music recommendations based on user profiles and song attributes.
+The system is designed with both functional and object-oriented approaches to handle music recommendations based on user profiles and song attributes. A detailed data flow diagram can be found in [UML.md](UML.md).
 
 ## Files and Modules
 
