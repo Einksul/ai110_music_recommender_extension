@@ -2,32 +2,27 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
-
-Your goal is to:
-
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
-Replace this paragraph with your own summary of what your version does.
+This project implements a modular, weighted music recommendation engine that transforms song metadata and user taste profiles into personalized suggestions. Our system uses a **Content-Based Filtering** approach, scoring songs based on their intrinsic attributes (genre, mood, energy, tempo, and valence) relative to a user's explicit preferences. The architecture is designed for scalability, featuring a clear separation between individual song scoring (Pointwise Evaluation) and global recommendation ranking (Listwise Evaluation).
 
 ---
 
 ## How The System Works
 
-Explain your design in plain language.
+### 1. Data Representation
+- **Song Features**: Each song is represented by several tags, numerical and categorical, describing the song
+- **UserProfile**: Stores the user's ideal targets for each feature that determines which attributes are most important for that specific user.
 
-Some prompts to answer:
+### 2. Scoring Logic (Pointwise Evaluation)
+The `Recommender` computes a compatibility score (0.0 to 1.0) for every song using a weighted sum of the features:
+- Categorical features: If a song's `genre` or `mood` exactly matches the user's preference, it receives the full weight for that category.
+- Numerical features: For features like `energy` and `tempo`, we calculate the distance between the song's value and the user's target. The closer the values, the higher the partial score (`1.0 - absolute_difference`).
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+### 3. Ranking & Selection (Listwise Evaluation)
+Once all songs are scored, we then
+- Sorts the entire library in descending order of their total scores.
+- Selects the top `k` songs (default is 5) to present to the user.
+- Generates a reasoning for each recommendation for the user
 
-You can include a simple diagram or bullet list if helpful.
 
 ---
 
