@@ -6,15 +6,15 @@
 ---
 
 ## 2. Intended Use  
-This model generates personalized music suggestions from a small, diverse catalog of 30 songs. It is designed for classroom exploration of recommendation logic, specifically focusing on how weighted linear combinations can balance categorical preferences (like Genre) with numerical "vibes" (like Energy and Tempo).
+This model generates personalized music suggestions from a catalog of 30 songs. It is specifically focuses on how weighted linear combinations can be used with both quantitative and qualitative features of songs.
 
 ---
 
 ## 3. How the Model Works  
-The model uses a **Weighted Content-Based Filtering** approach. It looks at every song in the database and calculates a "compatibility score" by comparing the song's attributes to the user's target profile.
+The model uses a **Weighted Content-Based Filtering** approach. It looks at every song in the database and calculates a compatability score by comparing the song's attributes to the user's target profile.
 - **Matching Categories**: It gives points if the genre or mood matches exactly.
 - **Measuring Distance**: For things like Energy or Tempo, it calculates how "close" the song is to the user's ideal. The closer the match, the higher the score.
-- **Custom Importance**: We use a set of "weights" to decide which features matter most. For example, we found that weighting "Mood" and "Energy" more heavily than "Genre" leads to better discovery of new music that fits a specific "vibe."
+- **Custom Importance**: The weight for each feature vary depending on which matters the most. For example, weighting "Mood" and "Energy" more heavily than "Genre" leads to better discovery of new music that fits a specific "vibe."
 
 ---
 
@@ -24,14 +24,13 @@ The dataset consists of **30 songs** across a wide variety of genres including P
 ---
 
 ## 5. Strengths  
-- **Vibe Alignment**: The system is excellent at finding songs that match a specific physiological state (e.g., high-energy workout or low-energy study session) even across different genres.
-- **Transparency**: Every recommendation comes with a "Reason" that explains which specific features (like a perfect energy match) drove the result.
-- **Flexibility**: The adjustable weight system allows the engine to be tuned for different types of users (e.g., those who are genre-loyal vs. those who are mood-seekers).
+- **Vibe Alignment**: The system is excellent at finding songs that match a user's vibe, even across different genres.
+- **Flexibility**: We are able to expand this system to allow for user feeback, which can be used to tune the weights for each user.
 
 ---
 
 ## 6. Limitations and Bias 
-- **The "Average" Trap**: Songs that are "okay" at everything can sometimes outrank songs that are "perfect" at one thing if weights are too evenly distributed.
+- Incorrect weights: Songs that are "okay" at everything can sometimes outrank songs that are "perfect" at one thing if weights are too evenly distributed.
 - **Genre Blindness**: If energy and mood are weighted too heavily, the system might ignore a user's explicit request for a specific genre (e.g., suggesting Lofi to a Metalhead).
 - **Small Catalog**: With only 30 songs, the system cannot capture the true diversity of musical sub-genres or cultural contexts.
 
@@ -48,11 +47,10 @@ We verified that the top 5 results logically followed our weighting math in ever
 ---
 
 ## 8. Future Work  
-- **Collaborative Filtering**: Incorporating "Likes" and "Skips" to learn from user behavior over time.
-- **Dynamic Weighting**: Automatically adjusting weights based on user feedback (e.g., if a user skips a different genre, increase the Genre weight).
+- User behavior: At the moment, the weights are fixed based on how an average user would behave. It would benefit to  incoporate user specific behavior after we import a profile, such as "Likes" and "Skips" to learn from user behavior over time. Additionally, we could automatically adjusting weights based on user feedback (e.g., if a user skips a different genre, increase the Genre weight).
 - **Diversity Re-ranking**: Ensuring the top 5 results aren't all from the same artist or genre to encourage broader discovery.
 
 ---
 
 ## 9. Personal Reflection  
-I learned that recommendation is a delicate balancing act. There is no "perfect" algorithm; every change in weights creates a trade-off between giving the user exactly what they asked for and surprising them with something they didn't know they would like. It's fascinating how a simple linear equation can mimic "intuition" so effectively.
+I was surprsised at how sensitive the mdoel was with respect to the weights. A small change on favoring a feature more would skew the recommendations. Due to this, I would suspect actual production level recommenders would have a lot more parameters to refine the state space. Additionally, they would also probably have a different architecture to make use of the user's data and behvaior. Humans should still be at the center, having a recommender thats more interactive would help it tailor its suggestions to the user, and with anything art related, there are always exceptions that can't be defined rigidly, so humans would be needed to classify it.
