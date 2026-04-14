@@ -26,11 +26,13 @@ class UserProfile:
     
     # Adjustable weights for the scoring algorithm
     weights: Dict[str, float] = field(default_factory=lambda: {
-        "genre": 0.4,
-        "mood": 0.3,
+        "genre": 0.35,
+        "mood": 0.25,
         "energy": 0.1,
         "tempo": 0.1,
-        "valence": 0.1
+        "valence": 0.05,
+        "acousticness": 0.1,
+        "danceability": 0.05
     })
 
 class Recommender:
@@ -61,6 +63,15 @@ class Recommender:
         # Valence (0.0 - 1.0)
         valence_score = 1.0 - abs(song.valence - user.target_valence)
         score += w["valence"] * valence_score
+
+        # Acousticness (0.0 - 1.0)
+        acoustic_score = 1.0 - abs(song.acousticness - (1.0 if user.likes_acoustic else 0.0))
+        score += w["acousticness"] * acoustic_score
+
+        # Danceability (0.0 - 1.0)
+        # We'll assume a high danceability preference for now, or could add target_danceability to UserProfile
+        dance_score = song.danceability 
+        score += w["danceability"] * dance_score
 
         return score
 

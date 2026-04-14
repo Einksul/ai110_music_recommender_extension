@@ -9,3 +9,23 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Rainy Window,The Mist,classical,melancholy,0.15,65,0.12,0.20,0.95
+12,Thunderhead,Metal Storm,metal,aggressive,0.98,185,0.05,0.35,0.02
+13,Street Magic,Rhythm Box,hip-hop,confident,0.85,92,0.70,0.91,0.12
+14,Morning Dew,Folk Whisper,folk,peaceful,0.30,105,0.75,0.45,0.88
+15,Electric Pulse,Static Wave,techno,energetic,0.88,128,0.62,0.80,0.05
+16,Old Vinyl,Jazz Quartet,jazz,smooth,0.45,88,0.68,0.55,0.76
+17,Dark Alley,Vibes Noir,trap,moody,0.65,140,0.30,0.78,0.15
+18,Sunlight Glow,Ambient Dream,ambient,peaceful,0.10,50,0.90,0.25,0.98
+19,Crowd Roar,Garage Punk,rock,raw,0.82,145,0.55,0.58,0.08
+20,Summer Groove,Pop Star,pop,happy,0.78,115,0.88,0.85,0.25
+21,Moonlight Sonata,Virtuoso,classical,focused,0.22,70,0.35,0.28,0.96
+22,Concrete Jungle,MC Flow,hip-hop,gritty,0.72,95,0.42,0.83,0.20
+23,Ocean Breeze,Island Vibes,reggae,relaxed,0.55,75,0.85,0.72,0.60
+24,Shatter Point,Heavy Hitter,metal,intense,0.95,170,0.15,0.40,0.01
+25,Gentle Stream,Nature Sound,acoustic,peaceful,0.20,82,0.80,0.40,0.90
+26,Night Rider,Synth City,synthwave,energetic,0.80,122,0.75,0.70,0.18
+27,Blue Note,Jazz Club,jazz,melancholy,0.32,85,0.25,0.48,0.82
+28,Desert Heat,World Beats,latin,passionate,0.87,110,0.78,0.86,0.22
+29,Cloud Nine,LoRoom,lofi,happy,0.38,82,0.82,0.65,0.74
+30,Void Echo,Deeper Space,ambient,dark,0.12,55,0.05,0.15,0.85

@@ -29,7 +29,9 @@ The scoring system uses a weighted linear combination of categorical and numeric
     - Calculated as `1.0 - abs(song_value - user_target)`.
     - `Energy` (Default weight: 0.1)
     - `Tempo` (Normalized diff / 100, Default weight: 0.1)
-    - `Valence` (Default weight: 0.1)
+    - `Valence` (Default weight: 0.05)
+    - `Acousticness` (Checks against `likes_acoustic` boolean, Default weight: 0.1)
+    - `Danceability` (Default weight: 0.05)
 
 This approach ensures that even if a song doesn't match the genre exactly, it can still rank high if its "vibe" (energy/tempo) is perfectly aligned with the user's needs.
 
