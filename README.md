@@ -126,13 +126,16 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
+### 1. The Preference Trade-off (Categorical vs. Numerical)
+Our experiments revealed a fundamental limitation in linear weighting: **intent collision**. By increasing the weight of numerical "vibe" features (like energy), the system naturally becomes "genre-blind." This creates a risk where a user who explicitly asks for "Classical" music might be recommended "Ambient" or "Lofi" simply because the numerical attributes match, potentially leading to user frustration.
 
-Examples:
+### 2. Algorithmic Bias toward "High-Energy" Genres
+Because the catalog has a higher density of high-energy tracks in certain genres (Pop, Metal, Rock), weighting `energy` heavily can create a systemic bias. The recommender may struggle to find "quiet" moments in a user's profile if the numerical differences in low-energy genres are too subtle to overcome the categorical weights of more dominant genres.
 
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
+### 3. Catalog Limitations
+- The system currently only works on a tiny, static catalog (30 songs).
+- It does not understand lyrical content, cultural context, or artist reputation.
+- It treats all numerical features as equally important unless manually tuned by the developer, which may not reflect how humans actually perceive music (e.g., a 10 BPM difference is more noticeable at 60 BPM than at 160 BPM).
 
 You will go deeper on this in your model card.
 
