@@ -8,20 +8,37 @@ This project implements a modular, weighted music recommendation engine that tra
 
 ## How The System Works
 
+Our recommender operates through a multi-stage pipeline designed for transparency and precision.
+
 ### 1. Data Representation
-- **Song Features**: Each song is represented by several tags, numerical and categorical, describing the song
+- **Song Features**: Each song is represented by categorical tags and numerical features such as (`energy`, `tempo_bpm`, `valence`, `danceability`, `acousticness`).
 - **UserProfile**: Stores the user's ideal targets for each feature that determines which attributes are most important for that specific user.
 
 ### 2. Scoring Logic (Pointwise Evaluation)
-The `Recommender` computes a compatibility score (0.0 to 1.0) for every song using a weighted sum of the features:
-- Categorical features: If a song's `genre` or `mood` exactly matches the user's preference, it receives the full weight for that category.
-- Numerical features: For features like `energy` and `tempo`, we calculate the distance between the song's value and the user's target. The closer the values, the higher the partial score (`1.0 - absolute_difference`).
+The `Recommender` computes a raw compatibility score (0.0 to 1.0) for every song using a weighted linear combination:
+- **Categorical feature**: Exact matches on `genre` or `mood`.
+- **Numerical features**: Distance-based calculation `weight * (1.0 - abs(song_value - user_target))` for features like Energy, Tempo, and Acousticness.
 
 ### 3. Ranking & Selection (Listwise Evaluation)
-Once all songs are scored, we then
-- Sorts the entire library in descending order of their total scores.
-- Selects the top `k` songs (default is 5) to present to the user.
-- Generates a reasoning for each recommendation for the user
+Once all songs are scored, the system sorts the library in descending order and selects the top `k` results. It then generates explanations highlighting why a song was chosen.
+
+---
+
+## Potential Biases and Faults
+
+Because the system relies on a weighted linear combination, incorrect weighting can lead to several algorithmic biases:
+
+### 1. The "Genre Bubble" (Over-weighting Categorical Features)
+If the `genre` weight is too high (e.g., > 0.8), the system becomes a simple search engine rather than a recommender. It will ignore "perfect vibe" matches from other genres, even if their energy and mood are exactly what the user wants.
+
+### 2. The "Averaging Effect" (Under-weighting Specificity)
+If weights are spread too thinly across all features, no single attribute can "veto" a bad match. A song might rank highly just by being "okay" at everything, rather than being "great" at the one thing the user actually cares about (like high tempo for a workout).
+
+### 3. Popularity/Energy Bias
+If features like `energy` are heavily weighted, the system may naturally favor high-tempo genres like Pop and Metal over Ambient or Classical, simply because the numerical density of high-energy tracks in the catalog is higher.
+
+### 4. Cold-Start Sensitivity
+If the weights are improperly tuned for a new user, the first five recommendations might be inaccurate, leading to immediate user churn. A robust system needs "default" weights that prioritize safe attributes (like Mood) over risky ones (like specific BPM targets).
 
 
 ---
