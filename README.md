@@ -120,6 +120,17 @@ You can add more tests in `tests/test_recommender.py`.
 - **Weighting Shift (Energy vs. Genre)**: Doubled Energy weight (0.2) and halved Genre weight (0.175).
   - **Result**: The system became much more responsive to the "vibe" of the song. In the "Acoustic Metalhead" test, low-energy Lofi tracks successfully outranked high-energy Metal tracks.
   - **Conclusion**: This is "more accurate" for mood-based discovery but can lead to "genre-blindness" where the system ignores a user's explicit categorical preference.
+
+#### Stress Test Visual Results:
+
+| Adversarial (High-Energy Classical) | Edge Case (Acoustic Metalhead) |
+| :---: | :---: |
+| ![High Energy Test](pics/high-energy.png) | ![Acoustic Metal Test](pics/metal.png) |
+
+| Edge Case (Minimalist) | The Ultra-Specific Niche |
+| :---: | :---: |
+| ![Minimalist Test](pics/minimalist.png) | ![Niche Test](pics/niche.png) |
+
 - **Numerical Sensitivity**: Added `acousticness` and `danceability` to the scoring logic.
 
 ---
