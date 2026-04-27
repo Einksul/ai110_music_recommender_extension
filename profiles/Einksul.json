@@ -1,0 +1,165 @@
+{
+    "name": "Einksul",
+    "playlists": {
+        "Pop": {
+            "name": "Pop",
+            "songs": [
+                {
+                    "id": "1",
+                    "title": "Sunrise City",
+                    "artist": "Neon Echo",
+                    "album": "Unknown",
+                    "genre": "pop",
+                    "mood": "happy"
+                },
+                {
+                    "id": "30",
+                    "title": "Void Echo",
+                    "artist": "Deeper Space",
+                    "album": "Unknown",
+                    "genre": "ambient",
+                    "mood": "dark"
+                },
+                {
+                    "id": "29",
+                    "title": "Cloud Nine",
+                    "artist": "LoRoom",
+                    "album": "Unknown",
+                    "genre": "lofi",
+                    "mood": "happy"
+                }
+            ]
+        },
+        "Pop2": {
+            "name": "Pop2",
+            "songs": [
+                {
+                    "id": "1",
+                    "title": "Sunrise City",
+                    "artist": "Neon Echo",
+                    "album": "Unknown",
+                    "genre": "pop",
+                    "mood": "happy"
+                },
+                {
+                    "id": "30",
+                    "title": "Void Echo",
+                    "artist": "Deeper Space",
+                    "album": "Unknown",
+                    "genre": "ambient",
+                    "mood": "dark"
+                }
+            ]
+        }
+    },
+    "liked_songs": [
+        {
+            "id": "1",
+            "title": "Sunrise City",
+            "artist": "Neon Echo",
+            "album": "Unknown",
+            "genre": "pop",
+            "mood": "happy"
+        }
+    ],
+    "user_metadata": {
+        "interaction_history": [
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "Pop"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "1",
+                        "title": "Sunrise City",
+                        "artist": "Neon Echo",
+                        "album": "Unknown",
+                        "genre": "pop",
+                        "mood": "happy"
+                    }
+                }
+            },
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "Pop2"
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Pop",
+                    "song": {
+                        "id": "1",
+                        "title": "Sunrise City",
+                        "artist": "Neon Echo",
+                        "album": "Unknown",
+                        "genre": "pop",
+                        "mood": "happy"
+                    }
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Pop2",
+                    "song": {
+                        "id": "1",
+                        "title": "Sunrise City",
+                        "artist": "Neon Echo",
+                        "album": "Unknown",
+                        "genre": "pop",
+                        "mood": "happy"
+                    }
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Pop",
+                    "song": {
+                        "id": "30",
+                        "title": "Void Echo",
+                        "artist": "Deeper Space",
+                        "album": "Unknown",
+                        "genre": "ambient",
+                        "mood": "dark"
+                    }
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Pop2",
+                    "song": {
+                        "id": "30",
+                        "title": "Void Echo",
+                        "artist": "Deeper Space",
+                        "album": "Unknown",
+                        "genre": "ambient",
+                        "mood": "dark"
+                    }
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Pop",
+                    "song": {
+                        "id": "29",
+                        "title": "Cloud Nine",
+                        "artist": "LoRoom",
+                        "album": "Unknown",
+                        "genre": "lofi",
+                        "mood": "happy"
+                    }
+                }
+            }
+        ],
+        "inferred_preferences": {}
+    }
+}
