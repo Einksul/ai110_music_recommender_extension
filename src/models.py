@@ -11,6 +11,7 @@ class SongInfo:
     album: str
     genre: str = ""
     mood: str = ""
+    artwork_url: str = ""
 
 @dataclass
 class Playlist:

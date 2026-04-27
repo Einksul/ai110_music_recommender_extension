@@ -1,47 +1,66 @@
-# System Data Flow & Architecture
+# System Architecture & Data Flow
 
-The following Mermaid diagram outlines how data moves through the Music Recommender Simulation, from initial user input to the final generated recommendations.
+The Music Recommender Extension has evolved into an interactive web application. The following diagrams outline the modern architecture and how user data flows through the system.
+
+## High-Level Architecture
 
 ```mermaid
 graph TD
-    %% Input Phase
-    subgraph Input [User Profile & Preferences]
-        A[User Input] --> B[UserProfile Object]
-        B1[Categorical Targets: Genre, Mood] -.-> B
-        B2[Numerical Targets: Energy, Tempo, etc.] -.-> B
-        B3[Adjustable Weights Dictionary] -.-> B
+    %% User Layer
+    subgraph UI [Streamlit User Interface]
+        A[Profile Loader] --> B[Dashboard]
+        B --> C1[Playlists Tab]
+        B --> C2[Search & Add Tab]
+        B --> C3[Liked Songs Tab]
     end
 
-    %% Processing Phase
-    subgraph Process [The Scoring Loop]
-        C[(songs.csv Library)] -- Load --> D[Song Objects List]
-        B -- Passed to --> E[Recommender.score_song]
-        D -- Iterated through --> E
+    %% Logic Layer
+    subgraph AppLogic [Application Logic]
+        C2 -- Search Query --> D{Search Router}
+        D -- Local --> E[(songs.csv)]
+        D -- Global --> F[iTunes Search API]
         
-        subgraph Logic [Scoring Rules]
-            E1[Categorical Match: exact strings]
-            E2[Numerical Closeness: 1.0 - abs_diff]
-            E1 & E2 --> E3[Weighted Linear Combination]
-        end
-        E3 -- Result --> F[Raw Score: 0.0 to 1.0]
+        C2 -- View Album/Artist --> G[iTunes Lookup API]
+        
+        C2 -- Interaction --> H[Action Logger]
     end
 
-    %% Output Phase
-    subgraph Output [The Ranking]
-        F -- List of Tuple: Song, Score --> G[Global Sort: Descending]
-        G -- Slice Top K --> H[Final Recommendation List]
-        H -- For Each Song --> I[Generate Human Explanation]
-        I -- Display --> J[Console Output]
+    %% Data Layer
+    subgraph Data [Persistence Layer]
+        H -- Save Interaction --> I[UserProfile JSON]
+        C2 -- Add/Like --> I
+        I -- Persistent Storage --> J[(profiles/ directory)]
+        J -- Load Session --> A
+    end
+
+    %% Future Phase
+    subgraph ML [Future Recommendation Engine]
+        I -- Ingest History --> K[RAG / Advanced Model]
+        K -- Predict --> L[Tailored Recommendations]
+        L -- Display --> C2
     end
 
     %% Styling
-    style Input fill:#e1f5fe,stroke:#01579b
-    style Process fill:#fff3e0,stroke:#e65100
-    style Output fill:#e8f5e9,stroke:#1b5e20
+    style UI fill:#e1f5fe,stroke:#01579b
+    style AppLogic fill:#fff3e0,stroke:#e65100
+    style Data fill:#e8f5e9,stroke:#1b5e20
+    style ML fill:#f3e5f5,stroke:#4a148c
 ```
 
-## Data Flow Summary
+## Component Breakdown
 
-1.  **Input**: The system captures a `UserProfile` containing both categorical preferences and numerical targets, along with a set of `weights` that define the importance of each feature.
-2.  **Process (Pointwise)**: The system loops through every `Song` in the catalog. For each song, it calculates a weighted compatibility score using the `score_song` logic.
-3.  **Ranking (Listwise)**: Once all songs have individual scores, they are sorted globally. The system then selects the top `K` results and generates natural language explanations for the user.
+### 1. Profile Persistence
+- **State**: The `UserProfile` object is the single source of truth during a session.
+- **Save**: Any change (creating a playlist, adding a song, liking a track) triggers an automatic `profile.save()` call, which serializes the state to `profiles/{name}.json`.
+- **Load**: On startup, the UI lists all files in `profiles/`, allowing the user to resume their specific session.
+
+### 2. Hybrid Search Engine
+- **Local Branch**: Filters the internal `songs.csv` using pandas. This is fast and contains the specific audio features (energy, tempo) for the recommendation model.
+- **Global Branch**: Queries the iTunes API in real-time. This provides access to millions of songs, album artwork, and audio previews.
+- **Exploration**: Uses the iTunes `lookup` endpoint to drill down into specific album contents or artist discographies.
+
+### 3. Interaction Logging
+- Every user action is captured in the `user_metadata` field:
+    - **Action**: "add_to_playlist", "like_song", "create_playlist".
+    - **Context**: Timestamps, song metadata, and search source (Local vs. Global).
+- This creates a rich behavioral dataset for future training of the advanced recommendation model.

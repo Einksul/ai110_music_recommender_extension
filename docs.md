@@ -1,82 +1,43 @@
-# Music Recommender Simulation Documentation
+# Music Recommender Extension Documentation
 
 ## Infrastructure Overview
-The system is designed with both functional and object-oriented approaches to handle music recommendations based on user profiles and song attributes. A detailed data flow diagram can be found in [UML.md](UML.md).
+The system has evolved from a CLI simulation into a full-featured Streamlit web application. It handles user persistence via JSON profiles, manages playlists, and integrates with the iTunes Search API for global music discovery. A detailed data flow diagram can be found in [UML.md](UML.md).
 
 ## Files and Modules
 
+### `src/app.py` (New)
+The main entry point for the interactive web application.
+- **Profile Management**: Handles session state for loading/creating user profiles.
+- **Search Engine**: Orchestrates both local (CSV) and global (iTunes) searches.
+- **Exploration Logic**: Implements drill-down views for Albums and Artists.
+- **Interactive Components**: Features audio preview players, artwork displays, and real-time playlist management.
+
+### `src/models.py` (New)
+Defines the core data structures for persistence and UI state.
+- **`SongInfo`**: A robust representation of a track, including IDs, metadata, and artwork URLs.
+- **`Playlist`**: A named collection of `SongInfo` objects.
+- **`UserProfile`**: Manages user data, multiple playlists, liked songs, and `user_metadata` for future model learning. Includes `save()` and `load()` logic for JSON persistence in the `profiles/` directory.
+
 ### `src/recommender.py`
-This module contains the core logic and data structures for the recommendation engine.
+Contains the core recommendation logic (weighted linear scoring). *Note: Integration with the new UI for active recommendations is the next development phase.*
 
-#### Data Structures
-- **`Song`**: A dataclass representing a song with attributes like genre, mood, energy, tempo, and more.
-- **`UserProfile`**: A dataclass representing user preferences. Includes an adjustable `weights` dictionary to control the influence of different features.
+## External Integrations
 
-#### Classes
-- **`Recommender`**: 
-  - `score_song(user, song)`: **Pointwise Evaluation**. Calculates a raw score (0.0 to 1.0) for a single song based on the user's weighted preferences.
-  - `recommend(user, k)`: **Listwise Ranking**. Scores all songs in the library, sorts them by score, and returns the top `k` results.
-  - `explain_recommendation(user, song)`: Provides human-readable reasoning for why a song was chosen.
+### iTunes Search API
+Used for real-time global music discovery without requiring API keys.
+- **Search**: Queries songs by title, artist, or album.
+- **Lookup**: Retrieves all tracks for a specific album or the top tracks for an artist.
+- **Media**: Provides 30-second audio previews and high-quality album artwork.
 
-## Scoring Algorithm
-
-The scoring system uses a weighted linear combination of categorical and numerical matches:
-
-1.  **Categorical Match (Exact)**:
-    - `Genre`: Exact match (Default weight: 0.4)
-    - `Mood`: Exact match (Default weight: 0.3)
-2.  **Numerical Closeness (Distance-based)**:
-    - Calculated as `1.0 - abs(song_value - user_target)`.
-    - `Energy` (Default weight: 0.1)
-    - `Tempo` (Normalized diff / 100, Default weight: 0.1)
-    - `Valence` (Default weight: 0.05)
-    - `Acousticness` (Checks against `likes_acoustic` boolean, Default weight: 0.1)
-    - `Danceability` (Default weight: 0.05)
-
-This approach ensures that even if a song doesn't match the genre exactly, it can still rank high if its "vibe" (energy/tempo) is perfectly aligned with the user's needs.
-
-#### Functional Interface
-- **`load_songs(csv_path: str)`**: Loads song data from a CSV file.
-- **`recommend_songs(user_prefs: Dict, songs: List[Dict], k: int)`**: A functional entry point for recommendation logic, returning a list of tuples containing the song, its score, and an explanation.
-
-### `src/main.py`
-The command-line entry point for the simulation. It demonstrates the loading of songs and the generation of recommendations based on a hardcoded user profile.
-
-### `tests/test_recommender.py`
-Contains unit tests to ensure the validity of the recommendation logic and data loading.
+## Persistence Layer
+- **Profiles**: Stored as JSON files in `profiles/{username}.json`.
+- **Interaction Logs**: User behavior (adds, likes, searches) is captured in the `user_metadata` field of the profile to provide training data for future model iterations.
 
 ## Design Philosophy
-- **Modularity**: Data structures are separated from logic to allow for easy scaling and modification.
-- **Extensibility**: The system supports both OOP and functional patterns to accommodate different integration styles.
-- **Transparency**: Every recommendation is accompanied by an explanation to provide user-facing reasoning.
+- **User-Centric**: Shifted from hardcoded simulations to a dynamic, interactive experience.
+- **Visual & Auditory**: Integration of artwork and audio previews to provide a rich music discovery environment.
+- **Hybrid Data**: Combines a local "known" library (`songs.csv`) with a massive global dataset (iTunes).
+- **Extensibility**: The architecture is ready for RAG (Retrieval-Augmented Generation) and advanced machine learning models.
 
-## Recommendation Strategies Research
-
-### Content-Based Filtering
-- **Logic**: "If you liked this, you'll like this similar thing."
-- **Focus**: Song attributes (genre, tempo, mood).
-- **Pros**: Handles new items well, very transparent.
-- **Cons**: Can lead to "filter bubbles" (low diversity).
-
-### Collaborative Filtering
-- **Logic**: "If people who are like you liked this, you'll like it too."
-- **Focus**: User behavior (likes, skips, playlist additions).
-- **Pros**: High discovery/serendipity, doesn't need song metadata.
-- **Cons**: "Cold start" problem for new users/items.
-
-## Stress Test Analysis
-
-### 1. High-Energy Classical (Adversarial)
-- **Scenario**: User wants high-energy, intense classical.
-- **Outcome**: System recommended High-Energy Rock/Metal.
-- **Insight**: Confirms that when a specific categorical-numerical combination is missing, the system prioritizes "vibe" (energy/mood) over "genre."
-
-### 2. Acoustic Metalhead (Edge Case)
-- **Scenario**: User wants low-energy, acoustic metal.
-- **Outcome**: A tie/split between Lofi (vibe match) and Metal (genre match).
-- **Insight**: Validates the 60/40 split between categorical and numerical weighting.
-
-### 3. Minimalist (Edge Case)
-- **Scenario**: No genre/mood provided.
-- **Outcome**: Low-score recommendations based on numerical defaults.
-- **Insight**: Highlights the system's reliance on categorical data for high-confidence scores.
+---
+*See [GEMINI.md](GEMINI.md) for the development roadmap and implementation status.*
