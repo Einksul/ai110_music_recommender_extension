@@ -17,6 +17,9 @@
                     "valence": 0.5,
                     "danceability": 0.5,
                     "acousticness": 0.5,
+                    "instrumentalness": 0.0,
+                    "speechiness": 0.0,
+                    "liveness": 0.0,
                     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/67/f1/7a/67f17aa9-2909-5a14-a949-31959c1d4d80/mzaf_13425942078361372642.plus.aac.p.m4a"
                 },
                 {
@@ -32,6 +35,9 @@
                     "valence": 0.5,
                     "danceability": 0.5,
                     "acousticness": 0.5,
+                    "instrumentalness": 0.0,
+                    "speechiness": 0.0,
+                    "liveness": 0.0,
                     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/8f/9a/c08f9af6-eeb4-3249-aca6-d02b1c6d7b27/mzaf_7141227988188348859.plus.aac.p.m4a"
                 },
                 {
@@ -47,6 +53,9 @@
                     "valence": 0.5,
                     "danceability": 0.5,
                     "acousticness": 0.5,
+                    "instrumentalness": 0.0,
+                    "speechiness": 0.0,
+                    "liveness": 0.0,
                     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/f1/8b/b0f18b4d-4188-fbfe-147c-9514834380d5/mzaf_4669912705375990672.plus.aac.p.m4a"
                 },
                 {
@@ -62,6 +71,9 @@
                     "valence": 0.5,
                     "danceability": 0.5,
                     "acousticness": 0.5,
+                    "instrumentalness": 0.0,
+                    "speechiness": 0.0,
+                    "liveness": 0.0,
                     "preview_url": ""
                 },
                 {
@@ -77,6 +89,9 @@
                     "valence": 0.5,
                     "danceability": 0.5,
                     "acousticness": 0.5,
+                    "instrumentalness": 0.0,
+                    "speechiness": 0.0,
+                    "liveness": 0.0,
                     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e6/a1/ba/e6a1ba11-3e00-d0f3-4563-fdbf416c7747/mzaf_13853719167130610517.plus.aac.p.m4a"
                 }
             ]
@@ -96,6 +111,9 @@
             "valence": 0.5,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d1/14/90/d1149047-7b3f-11e3-97c5-4ac52434d644/mzaf_13600435206444164514.plus.aac.p.m4a"
         },
         {
@@ -111,6 +129,9 @@
             "valence": 0.5,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b5/98/a8/b598a8cf-40f4-78cb-16cf-390488c247cd/mzaf_12752398875140434205.plus.aac.p.m4a"
         },
         {
@@ -126,6 +147,9 @@
             "valence": 0.8,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": ""
         },
         {
@@ -141,6 +165,9 @@
             "valence": 0.8,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7f/e4/3b/7fe43b4e-33d1-afff-a89f-8df6e188d6e4/mzaf_13860905252489579519.plus.aac.p.m4a"
         },
         {
@@ -156,6 +183,9 @@
             "valence": 0.8,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": ""
         },
         {
@@ -171,6 +201,9 @@
             "valence": 0.5,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/f1/8b/b0f18b4d-4188-fbfe-147c-9514834380d5/mzaf_4669912705375990672.plus.aac.p.m4a"
         },
         {
@@ -186,6 +219,9 @@
             "valence": 0.5,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": ""
         },
         {
@@ -201,6 +237,9 @@
             "valence": 0.8,
             "danceability": 0.5,
             "acousticness": 0.5,
+            "instrumentalness": 0.0,
+            "speechiness": 0.0,
+            "liveness": 0.0,
             "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/31/27/1d312776-a4a6-52de-0c63-93be875a690b/mzaf_7589419884220146079.plus.aac.p.m4a"
         }
     ],
@@ -2102,6 +2141,427 @@
                     "source": "Global RAG (Internet)",
                     "seed_count": 8,
                     "requested_count": 40
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 16
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 16
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 16
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 16
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Local Library",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Et si tu n'existais pas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Et si tu n'existais pas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Men seni jaqsy korem",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Et si tu n'existais pas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Men seni jaqsy korem",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Is What It Is",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Et si tu n'existais pas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Men seni jaqsy korem",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Is What It Is",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "All I Wanted",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Et si tu n'existais pas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Men seni jaqsy korem",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Is What It Is",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "All I Wanted",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Stalemate",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Adai",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Et si tu n'existais pas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Men seni jaqsy korem",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Is What It Is",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "All I Wanted",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Stalemate",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "What A Time To Be Alive",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 50
                 }
             }
         ],

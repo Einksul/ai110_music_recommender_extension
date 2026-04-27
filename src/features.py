@@ -5,32 +5,42 @@ import pandas as pd
 class LocalFeatureEstimator:
     """
     Zero-cost feature estimator that maps metadata to numerical song features.
+    Now expanded to 8 dimensions for more expressive recommendations.
     """
     
-    # Simple genre mappings
+    # Expanded genre mappings
     GENRE_MAP = {
-        "rock": {"energy": 0.8, "tempo": 130, "mood": "intense", "valence": 0.5},
-        "metal": {"energy": 0.95, "tempo": 160, "mood": "intense", "valence": 0.3},
-        "pop": {"energy": 0.7, "tempo": 120, "mood": "happy", "valence": 0.8},
-        "lofi": {"energy": 0.3, "tempo": 80, "mood": "chill", "valence": 0.6},
-        "chill": {"energy": 0.4, "tempo": 90, "mood": "chill", "valence": 0.7},
-        "jazz": {"energy": 0.4, "tempo": 100, "mood": "mellow", "valence": 0.6},
-        "classical": {"energy": 0.3, "tempo": 70, "mood": "mellow", "valence": 0.4},
-        "electronic": {"energy": 0.85, "tempo": 128, "mood": "energetic", "valence": 0.7},
-        "hip hop": {"energy": 0.65, "tempo": 95, "mood": "confident", "valence": 0.6},
-        "rap": {"energy": 0.7, "tempo": 90, "mood": "confident", "valence": 0.5},
-        "folk": {"energy": 0.4, "tempo": 110, "mood": "mellow", "valence": 0.6},
-        "acoustic": {"energy": 0.3, "tempo": 100, "mood": "mellow", "valence": 0.5},
+        "rock": {"energy": 0.8, "tempo": 130, "mood": "intense", "valence": 0.5, "instrumentalness": 0.1},
+        "metal": {"energy": 0.95, "tempo": 160, "mood": "intense", "valence": 0.3, "instrumentalness": 0.2},
+        "pop": {"energy": 0.7, "tempo": 120, "mood": "happy", "valence": 0.8, "speechiness": 0.1},
+        "lofi": {"energy": 0.3, "tempo": 80, "mood": "chill", "valence": 0.6, "instrumentalness": 0.8},
+        "chill": {"energy": 0.4, "tempo": 90, "mood": "chill", "valence": 0.7, "instrumentalness": 0.5},
+        "jazz": {"energy": 0.4, "tempo": 100, "mood": "mellow", "valence": 0.6, "instrumentalness": 0.6},
+        "classical": {"energy": 0.3, "tempo": 70, "mood": "mellow", "valence": 0.4, "instrumentalness": 0.95},
+        "electronic": {"energy": 0.85, "tempo": 128, "mood": "energetic", "valence": 0.7, "instrumentalness": 0.4},
+        "hip hop": {"energy": 0.65, "tempo": 95, "mood": "confident", "valence": 0.6, "speechiness": 0.5},
+        "rap": {"energy": 0.7, "tempo": 90, "mood": "confident", "valence": 0.5, "speechiness": 0.8},
+        "folk": {"energy": 0.4, "tempo": 110, "mood": "mellow", "valence": 0.6, "acousticness": 0.7},
+        "acoustic": {"energy": 0.3, "tempo": 100, "mood": "mellow", "valence": 0.5, "acousticness": 0.9},
+        "asmr": {"energy": 0.1, "tempo": 60, "mood": "calm", "valence": 0.5, "speechiness": 0.9, "acousticness": 0.8},
+        "spoken": {"energy": 0.2, "tempo": 70, "mood": "neutral", "valence": 0.5, "speechiness": 0.95},
+        "ambient": {"energy": 0.2, "tempo": 60, "mood": "calm", "valence": 0.5, "instrumentalness": 0.9, "acousticness": 0.3},
     }
 
     # Keyword modifiers
     KEYWORD_MODIFIERS = {
-        r"\bacoustic\b": {"energy": -0.2, "acousticness": 0.8},
-        r"\bremix\b": {"energy": 0.1, "danceability": 0.1},
-        r"\blive\b": {"energy": 0.1},
+        r"\bacoustic\b": {"energy": -0.2, "acousticness": 0.8, "instrumentalness": 0.2},
+        r"\bremix\b": {"energy": 0.1, "danceability": 0.1, "instrumentalness": 0.1},
+        r"\blive\b": {"energy": 0.1, "liveness": 0.8},
+        r"\bconcert\b": {"liveness": 0.9},
         r"\bchill\b": {"energy": -0.1, "mood": "chill"},
         r"\bsad\b": {"valence": -0.3, "mood": "sad"},
         r"\bhappy\b": {"valence": 0.3, "mood": "happy"},
+        r"\binstrumental\b": {"instrumentalness": 0.9},
+        r"\bkaraoke\b": {"instrumentalness": 0.8, "speechiness": -0.2},
+        r"\basmr\b": {"speechiness": 0.9, "energy": -0.3, "mood": "calm"},
+        r"\bfeat\b": {"speechiness": 0.1}, # Features usually mean more vocals
+        r"\bvocals\b": {"instrumentalness": -0.5, "speechiness": 0.2},
     }
 
     @classmethod
@@ -42,16 +52,17 @@ class LocalFeatureEstimator:
             "mood": "neutral",
             "valence": 0.5,
             "danceability": 0.5,
-            "acousticness": 0.5
+            "acousticness": 0.5,
+            "instrumentalness": 0.1,
+            "speechiness": 0.05,
+            "liveness": 0.1
         }
 
         # 1. Apply Genre Mappings
         genre_lower = genre.lower()
-        matched_genre = False
         for g_key, g_vals in cls.GENRE_MAP.items():
             if g_key in genre_lower:
                 features.update(g_vals)
-                matched_genre = True
                 break
         
         # 2. Apply Keyword Modifiers from Title

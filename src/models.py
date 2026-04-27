@@ -18,6 +18,9 @@ class SongInfo:
     valence: float = 0.5
     danceability: float = 0.5
     acousticness: float = 0.5
+    instrumentalness: float = 0.0
+    speechiness: float = 0.0
+    liveness: float = 0.0
     preview_url: str = ""
 
 @dataclass

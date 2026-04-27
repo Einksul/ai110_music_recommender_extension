@@ -204,7 +204,10 @@ def main():
                             tempo=f['tempo'],
                             valence=f['valence'],
                             danceability=f['danceability'],
-                            acousticness=f['acousticness']
+                            acousticness=f['acousticness'],
+                            instrumentalness=f['instrumentalness'],
+                            speechiness=f['speechiness'],
+                            liveness=f['liveness']
                         )
 
                         col_img, col_a, col_b, col_c = st.columns([1, 3, 1, 1])
@@ -293,9 +296,11 @@ def main():
                                 valence=f['valence'],
                                 danceability=f['danceability'],
                                 acousticness=f['acousticness'],
+                                instrumentalness=f['instrumentalness'],
+                                speechiness=f['speechiness'],
+                                liveness=f['liveness'],
                                 preview_url=item.get('previewUrl', '')
                                 ),
-
                             "preview": item.get('previewUrl'),
                             "raw": item
                         })
@@ -324,8 +329,12 @@ def main():
                                 tempo=row.get('tempo_bpm', 110.0),
                                 valence=row.get('valence', 0.5),
                                 danceability=row.get('danceability', 0.5),
-                                acousticness=row.get('acousticness', 0.5)
-                            ),
+                                acousticness=row.get('acousticness', 0.5),
+                                instrumentalness=row.get('instrumentalness', 0.0),
+                                speechiness=row.get('speechiness', 0.0),
+                                liveness=row.get('liveness', 0.0)
+                                ),
+
                             "preview": None,
                             "raw": None
                         })
@@ -437,7 +446,7 @@ def main():
         with r_col1:
             mode = st.radio("Recommendation Basis", ["Playlist-Specific", "General Discovery"], horizontal=True)
         with r_col2:
-            source = st.radio("Discovery Source", ["Local Library", "Global RAG (Internet)"], horizontal=True)
+            source = st.radio("Discovery Source", ["Local Library", "Global RAG (Internet)"], index=1, horizontal=True)
         with r_col3:
             rec_count = st.slider("Count", 5, 50, 10)
         
@@ -498,7 +507,8 @@ def main():
                     # Explanatory Popover
                     with st.popover("ℹ️ Why this?"):
                         st.write(row.get('explanation', "Matches your recent listening vibe!"))
-                        st.caption(f"Features: E:{row.get('energy'):.1f} | T:{row.get('tempo'):.0f} | V:{row.get('valence'):.1f}")
+                        st.caption(f"Audio Vibe: E:{row.get('energy', 0.5):.1f} | T:{row.get('tempo', 110):.0f} | V:{row.get('valence', 0.5):.1f}")
+                        st.caption(f"Expressive: Ins:{row.get('instrumentalness', 0):.1f} | Sp:{row.get('speechiness', 0):.1f} | Liv:{row.get('liveness', 0):.1f}")
 
                     rating = st.feedback("stars", key=f"rate_{song_id}")
                     if rating is not None:
@@ -521,13 +531,42 @@ def main():
                                 tempo=row.get('tempo', row.get('tempo_bpm', 110.0)),
                                 valence=row.get('valence', 0.5),
                                 danceability=row.get('danceability', 0.5),
-                                acousticness=row.get('acousticness', 0.5)
+                                acousticness=row.get('acousticness', 0.5),
+                                instrumentalness=row.get('instrumentalness', 0.0),
+                                speechiness=row.get('speechiness', 0.0),
+                                liveness=row.get('liveness', 0.0)
                             )
                             # Add to liked_songs for the session to shift the centroid
                             if new_seed.id not in [s.id for s in profile.liked_songs]:
                                 profile.liked_songs.append(new_seed)
                         
                         st.success("Feedback saved!")
+                    
+                    if st.button("Add to Liked", key=f"rec_like_{song_id}"):
+                        new_song = SongInfo(
+                            id=str(song_id),
+                            title=row['title'],
+                            artist=row['artist'],
+                            album=row.get('album', 'Unknown'),
+                            genre=row['genre'],
+                            mood=row['mood'],
+                            artwork_url=artwork,
+                            energy=row.get('energy', 0.5),
+                            tempo=row.get('tempo', row.get('tempo_bpm', 110.0)),
+                            valence=row.get('valence', 0.5),
+                            danceability=row.get('danceability', 0.5),
+                            acousticness=row.get('acousticness', 0.5),
+                            instrumentalness=row.get('instrumentalness', 0.0),
+                            speechiness=row.get('speechiness', 0.0),
+                            liveness=row.get('liveness', 0.0),
+                            preview_url=row.get('preview_url', '')
+                        )
+                        if new_song.id not in [s.id for s in profile.liked_songs]:
+                            profile.liked_songs.append(new_song)
+                            log_interaction("like_from_rec", {"song": asdict(new_song)})
+                            st.success("Liked!")
+                        else:
+                            st.info("Already in Liked Songs")
 
 if __name__ == "__main__":
     from dataclasses import asdict
