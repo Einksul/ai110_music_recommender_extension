@@ -43,33 +43,33 @@ To run this project locally, follow these steps:
 ## Sample Interactions
 
 ### 1. Zero-Cost Feature Estimation
-**Input:** Search Online for "ASMR rain sounds"  
-**System Output:** Automatically identifies the "ASMR" keyword and genre.  
-**AI Logic:** The `LocalFeatureEstimator` assigns a **Speechiness** score of 0.9 and **Energy** of 0.1. The "Why this?" button explains: *"Matches your interest in spoken word/ASMR."*
+**Input:** Search Online for "Solo Piano Chill"  
+**System Output:** Automatically identifies instrumental and acoustic characteristics.  
+**AI Logic:** The `LocalFeatureEstimator` assigns a high **Instrumentalness** score and low **Energy**. The "Why this?" button explains: *"Matches your preference for acoustic and instrumental tracks."*
 
 ### 2. Explainable Global Discovery
-**Input:** Request 10 recommendations based on a "Rock" playlist.  
-**System Output:** 10 diverse artists (e.g., Hitsujibungaku, Ginger Root, Yorushika).  
-**AI Logic:** The model identifies that Hitsujibungaku is *"Thematically similar to [Seed Song X]"* (TF-IDF), while Ginger Root *"Shares the exact energy profile of [Seed Song Y]"* (Numerical KNN).
+**Input:** Request 10 recommendations based on a "High Energy" playlist.  
+**System Output:** 10 diverse artists across different high-tempo genres.  
+**AI Logic:** The model identifies that one track is *"Thematically similar to [Seed Song X]"* (TF-IDF), while another *"Shares the exact energy profile of [Seed Song Y]"* (Numerical KNN).
 
 ### 3. Real-Time Model Tuning
 **Input:** User gives a 5-star rating to a recommended Jazz track.  
-**System Output:** Notification: *"Model tuned! Finding more like 'Midnight Jazz'..."*  
+**System Output:** Notification: *"Model tuned! Finding more like this track..."*  
 **AI Logic:** The system performs a "Preference Shift" by adding the new track to the session's active seeds, immediately influencing the next generation of results.
 
 ---
 
 ## Design Decisions
-- **KNN vs. Deep Learning**: I chose a **KNN-based Ensemble** over a Neural Network (like a Two-Tower model) because this is a zero-cost test project. KNN provides high accuracy with small datasets and requires zero expensive training or token costs.
-- **MMR for Diversity**: Simple sorting by similarity often leads to "artist clusters" (recommending 10 songs by the same artist). I implemented **Maximal Marginal Relevance (MMR)** to penalize redundancy and force diversity.
-- **Local Feature Estimation (LFE)**: Since external APIs for audio features (like Spotify) require keys and complex auth, I built a local NLP engine that estimates vibes (Energy, Tempo, Instrumentalness) directly from metadata for free.
+- **KNN vs. Deep Learning**: I chose a **KNN-based Ensemble** over a Neural Network (like a Two-Tower model) because this is a zero-cost project. KNN provides high accuracy with small datasets and requires zero expensive training or token costs.
+- **MMR for Diversity**: Simple sorting by similarity often leads to "artist clusters" (recommending 10 songs by the same artist). I implemented **Maximal Marginal Relevance (MMR)** to penalize redundancy and force artist diversity.
+- **Local Feature Estimation (LFE)**: Since external APIs for audio features require keys and complex auth, I built a local NLP engine that estimates vibes (Energy, Tempo, Speechiness) directly from metadata for free.
 
 ---
 
 ## Testing Summary
-- **What Worked**: The Item-to-Item strategy successfully eliminated "Centroid Washout," allowing a user to like both Metal and Classical and see both reflected in the results.
-- **Challenges**: Initially, the model suffered from "Deterministic Bias" (giving the same 5 results every time). I solved this by implementing **Randomized Multi-Query RAG** and a **Variety Sampling Pool**.
-- **Learnings**: I learned that transparency is as important as accuracy. Adding the "Why this?" popover dramatically increased user trust in the AI's "weird" but diverse suggestions.
+- **What Worked**: The Item-to-Item strategy successfully eliminated "Centroid Washout," allowing a user to like both high-energy and low-energy music and see both reflected in the results.
+- **Challenges**: Initially, the model suffered from "Deterministic Bias" (giving the same results every time). I solved this by implementing **Randomized Multi-Query RAG** and a **Variety Sampling Pool**.
+- **Learnings**: I learned that transparency is as important as accuracy. Adding the "Why this?" popover dramatically increased user trust in the AI's diverse suggestions.
 
 ---
 
