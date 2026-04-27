@@ -1,43 +1,43 @@
 # Music Recommender Extension Documentation
 
 ## Infrastructure Overview
-The system has evolved from a CLI simulation into a full-featured Streamlit web application. It handles user persistence via JSON profiles, manages playlists, and integrates with the iTunes Search API for global music discovery. A detailed data flow diagram can be found in [UML.md](UML.md).
+The system is an interactive Streamlit application powered by an **Ensemble Recommendation Engine**. It combines numerical audio feature analysis with semantic text matching and internet discovery (RAG) to provide personalized music suggestions.
 
 ## Files and Modules
 
-### `src/app.py` (New)
-The main entry point for the interactive web application.
-- **Profile Management**: Handles session state for loading/creating user profiles.
-- **Search Engine**: Orchestrates both local (CSV) and global (iTunes) searches.
-- **Exploration Logic**: Implements drill-down views for Albums and Artists.
-- **Interactive Components**: Features audio preview players, artwork displays, and real-time playlist management.
+### `src/app.py`
+The central orchestration layer.
+- **Session Management**: Maintains persistence via JSON profiles.
+- **Dynamic Interaction**: Handles real-time feedback (ratings) and navigates between library management and global exploration.
+- **UI State**: Uses `st.session_state` to persist searches and recommendation results during a session.
 
-### `src/models.py` (New)
-Defines the core data structures for persistence and UI state.
-- **`SongInfo`**: A robust representation of a track, including IDs, metadata, and artwork URLs.
-- **`Playlist`**: A named collection of `SongInfo` objects.
-- **`UserProfile`**: Manages user data, multiple playlists, liked songs, and `user_metadata` for future model learning. Includes `save()` and `load()` logic for JSON persistence in the `profiles/` directory.
+### `src/models.py`
+Defines the `UserProfile`, `Playlist`, and `SongInfo` data structures.
+- Supports comprehensive metadata storage, including numerical features and artwork/preview URLs.
 
-### `src/recommender.py`
-Contains the core recommendation logic (weighted linear scoring). *Note: Integration with the new UI for active recommendations is the next development phase.*
+### `src/features.py` (Enhanced)
+- **`LocalFeatureEstimator`**: Maps genre/title metadata to numerical vectors (Energy, Tempo, Mood).
+- **`SemanticFeatureExtractor`**: Implements **TF-IDF Vectorization** to provide semantic context (Artist/Genre/Title matching).
 
-## External Integrations
+### `src/recommender_v2.py` (New)
+The heart of the system. Implements an **Ensemble Model**:
+1.  **Item-to-Item Similarity**: Pairwise cosine similarity between candidates and individual seed songs.
+2.  **Multi-Centroid Clustering**: Uses **K-Means** to identify distinct "vibes" in user history and finds matches for each cluster.
+3.  **TF-IDF Similarity**: Weights suggestions based on semantic text overlap.
+4.  **Explainable AI**: Generates human-readable reasons for every suggestion based on which ensemble pillar triggered it.
 
-### iTunes Search API
-Used for real-time global music discovery without requiring API keys.
-- **Search**: Queries songs by title, artist, or album.
-- **Lookup**: Retrieves all tracks for a specific album or the top tracks for an artist.
-- **Media**: Provides 30-second audio previews and high-quality album artwork.
+## Key Logic Flows
 
-## Persistence Layer
-- **Profiles**: Stored as JSON files in `profiles/{username}.json`.
-- **Interaction Logs**: User behavior (adds, likes, searches) is captured in the `user_metadata` field of the profile to provide training data for future model iterations.
+### 1. Global RAG Discovery
+- **Identify**: Extract top artists/genres from seeds.
+- **Retrieve**: Query iTunes API for fresh world-wide candidates.
+- **Ensemble Rank**: Score candidates using both numerical and semantic models.
+- **Deliver**: Display with artwork, previews, and "Why this?" explanations.
 
-## Design Philosophy
-- **User-Centric**: Shifted from hardcoded simulations to a dynamic, interactive experience.
-- **Visual & Auditory**: Integration of artwork and audio previews to provide a rich music discovery environment.
-- **Hybrid Data**: Combines a local "known" library (`songs.csv`) with a massive global dataset (iTunes).
-- **Extensibility**: The architecture is ready for RAG (Retrieval-Augmented Generation) and advanced machine learning models.
+### 2. Session-Based Learning
+- When a user provides a **5-star rating**, the model performs a "Preference Shift."
+- The song is temporarily added to the session's active seeds.
+- This immediately influences the next generation of recommendations by moving the user's "taste centroid."
 
 ---
-*See [GEMINI.md](GEMINI.md) for the development roadmap and implementation status.*
+*See [UML.md](UML.md) for architectural diagrams.*

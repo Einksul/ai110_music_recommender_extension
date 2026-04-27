@@ -1,66 +1,75 @@
 # System Architecture & Data Flow
 
-The Music Recommender Extension has evolved into an interactive web application. The following diagrams outline the modern architecture and how user data flows through the system.
+## Ensemble Recommendation Architecture
 
-## High-Level Architecture
+The core of the system is a three-pillar ensemble model that ensures accurate and diverse suggestions.
 
 ```mermaid
 graph TD
-    %% User Layer
-    subgraph UI [Streamlit User Interface]
-        A[Profile Loader] --> B[Dashboard]
-        B --> C1[Playlists Tab]
-        B --> C2[Search & Add Tab]
-        B --> C3[Liked Songs Tab]
+    %% Seeds
+    UserSeeds[User History / Seeds] --> FE[Feature Extraction]
+    
+    %% Pillars
+    subgraph Ensemble [Ensemble Engine]
+        direction TB
+        P1[Item-to-Item KNN]
+        P2[Multi-Centroid K-Means]
+        P3[Semantic TF-IDF]
     end
-
-    %% Logic Layer
-    subgraph AppLogic [Application Logic]
-        C2 -- Search Query --> D{Search Router}
-        D -- Local --> E[(songs.csv)]
-        D -- Global --> F[iTunes Search API]
-        
-        C2 -- View Album/Artist --> G[iTunes Lookup API]
-        
-        C2 -- Interaction --> H[Action Logger]
-    end
-
-    %% Data Layer
-    subgraph Data [Persistence Layer]
-        H -- Save Interaction --> I[UserProfile JSON]
-        C2 -- Add/Like --> I
-        I -- Persistent Storage --> J[(profiles/ directory)]
-        J -- Load Session --> A
-    end
-
-    %% Future Phase
-    subgraph ML [Future Recommendation Engine]
-        I -- Ingest History --> K[RAG / Advanced Model]
-        K -- Predict --> L[Tailored Recommendations]
-        L -- Display --> C2
-    end
-
-    %% Styling
-    style UI fill:#e1f5fe,stroke:#01579b
-    style AppLogic fill:#fff3e0,stroke:#e65100
-    style Data fill:#e8f5e9,stroke:#1b5e20
-    style ML fill:#f3e5f5,stroke:#4a148c
+    
+    FE -- Numerical Vectors --> P1
+    FE -- Numerical Vectors --> P2
+    FE -- Text Metadata --> P3
+    
+    %% Logic
+    P1 -- Individual Matches --> Blender[Ranker & Blender]
+    P2 -- Vibe Clusters --> Blender
+    P3 -- Text Similarity --> Blender
+    
+    %% Final
+    Blender -- Ranked Results --> Explanation[Explainable AI Layer]
+    Explanation -- Output --> UI[Streamlit Frontend]
+    
+    %% Feedback
+    UI -- 5-Star Rating --> UserSeeds
 ```
 
-## Component Breakdown
+## High-Level System Flow
 
-### 1. Profile Persistence
-- **State**: The `UserProfile` object is the single source of truth during a session.
-- **Save**: Any change (creating a playlist, adding a song, liking a track) triggers an automatic `profile.save()` call, which serializes the state to `profiles/{name}.json`.
-- **Load**: On startup, the UI lists all files in `profiles/`, allowing the user to resume their specific session.
+```mermaid
+graph TD
+    subgraph UI [Frontend]
+        A[Profile Loader] --> B[Interactive Dashboard]
+        B --> C[Management & Exploration]
+    end
 
-### 2. Hybrid Search Engine
-- **Local Branch**: Filters the internal `songs.csv` using pandas. This is fast and contains the specific audio features (energy, tempo) for the recommendation model.
-- **Global Branch**: Queries the iTunes API in real-time. This provides access to millions of songs, album artwork, and audio previews.
-- **Exploration**: Uses the iTunes `lookup` endpoint to drill down into specific album contents or artist discographies.
+    subgraph RAG [Internet Integration]
+        C -- Search/Discover --> D[iTunes Search API]
+        D -- Raw Data --> E[Local Feature Estimator]
+        E -- Vibe Vectors --> B
+    end
 
-### 3. Interaction Logging
-- Every user action is captured in the `user_metadata` field:
-    - **Action**: "add_to_playlist", "like_song", "create_playlist".
-    - **Context**: Timestamps, song metadata, and search source (Local vs. Global).
-- This creates a rich behavioral dataset for future training of the advanced recommendation model.
+    subgraph Data [Storage]
+        B -- Save --> F[JSON Profiles]
+        F -- Load --> A
+    end
+```
+
+## Strategy Details
+
+### 1. Item-to-Item Similarity
+- Each seed song acts as an individual query.
+- Bypasses averaging to preserve polar-opposite tastes (e.g., Chill vs. Metal).
+
+### 2. Multi-Centroid (K-Means)
+- Groups user history into $K$ distinct taste clusters.
+- Finds candidates that match the center of these specific "listening moods."
+
+### 3. TF-IDF Semantic Matching
+- Analyzes text metadata (Title, Artist, Genre).
+- Captures nuances like "Remix," "Live," or specific artist names that numerical features might overlook.
+
+### 4. Dynamic Weighting
+- **Numerical Score**: 70% of total ranking weight.
+- **Semantic Score**: 30% of total ranking weight.
+- High-star feedback triggers a real-time shift in the session's active seeds.

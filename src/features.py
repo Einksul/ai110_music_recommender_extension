@@ -1,4 +1,6 @@
 import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+import pandas as pd
 
 class LocalFeatureEstimator:
     """
@@ -66,3 +68,48 @@ class LocalFeatureEstimator:
         features["tempo_norm"] = features["tempo"] / 200.0
 
         return features
+
+class SemanticFeatureExtractor:
+    """
+    Handles TF-IDF vectorization for semantic understanding of song metadata.
+    """
+    def __init__(self):
+        self.vectorizer = TfidfVectorizer(stop_words='english')
+        self.is_fitted = False
+
+    def prepare_metadata_string(self, song_info):
+        """Combines artist, title, and genre into a single searchable string."""
+        # song_info can be a SongInfo object or a dict from a row
+        if hasattr(song_info, 'artist'):
+            return f"{song_info.artist} {song_info.title} {song_info.genre}".lower()
+        else:
+            # Handle case where song_info might be a Series or dict
+            try:
+                artist = song_info.get('artist', '')
+                title = song_info.get('title', '')
+                genre = song_info.get('genre', '')
+                return f"{artist} {title} {genre}".lower()
+            except:
+                return ""
+
+    def fit(self, songs_list):
+        """Fits the TF-IDF vectorizer on a list of items."""
+        # Fix: Use 'is not None' because pandas objects have ambiguous truth values
+        texts = [self.prepare_metadata_string(s) for s in songs_list if s is not None]
+        texts = [t for t in texts if t.strip()]
+        if texts:
+            self.vectorizer.fit(texts)
+            self.is_fitted = True
+
+    def transform(self, items):
+        """Transforms items into TF-IDF vectors."""
+        if not self.is_fitted:
+            return None
+        
+        if isinstance(items, list):
+            texts = [self.prepare_metadata_string(s) for s in items]
+        else:
+            # Single item
+            texts = [self.prepare_metadata_string(items)]
+            
+        return self.vectorizer.transform(texts)

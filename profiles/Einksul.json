@@ -33,6 +33,51 @@
                     "danceability": 0.5,
                     "acousticness": 0.5,
                     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/8f/9a/c08f9af6-eeb4-3249-aca6-d02b1c6d7b27/mzaf_7141227988188348859.plus.aac.p.m4a"
+                },
+                {
+                    "id": "web_1869843691",
+                    "title": "Reply",
+                    "artist": "KZ & Kaguya(cv.Yuko Natsuyoshi)",
+                    "album": "Cosmic Princess Kaguya!",
+                    "genre": "Anime",
+                    "mood": "neutral",
+                    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b3/1b/50/b31b50d3-c70b-3272-bfea-e370638593b3/4550752693389_cover.png/100x100bb.jpg",
+                    "energy": 0.5,
+                    "tempo": 110,
+                    "valence": 0.5,
+                    "danceability": 0.5,
+                    "acousticness": 0.5,
+                    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/f1/8b/b0f18b4d-4188-fbfe-147c-9514834380d5/mzaf_4669912705375990672.plus.aac.p.m4a"
+                },
+                {
+                    "id": "web_1702627144",
+                    "title": "more than words",
+                    "artist": "Hitsujibungaku",
+                    "album": "more than words - EP",
+                    "genre": "Rock",
+                    "mood": "intense",
+                    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ff/6b/19/ff6b1924-6db1-3151-a724-8d00c0f4c204/4547366642537.jpg/100x100bb.jpg",
+                    "energy": 0.8,
+                    "tempo": 130,
+                    "valence": 0.5,
+                    "danceability": 0.5,
+                    "acousticness": 0.5,
+                    "preview_url": ""
+                },
+                {
+                    "id": "web_1726131787",
+                    "title": "Young Life",
+                    "artist": "Laura day romance",
+                    "album": "Young Life / Brighter Brighter - Single",
+                    "genre": "Rock",
+                    "mood": "intense",
+                    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/cf/b2/ab/cfb2abdd-8f44-ff1f-c3cc-31b11c432a5f/4525853504698.jpg/100x100bb.jpg",
+                    "energy": 0.8,
+                    "tempo": 130,
+                    "valence": 0.5,
+                    "danceability": 0.5,
+                    "acousticness": 0.5,
+                    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e6/a1/ba/e6a1ba11-3e00-d0f3-4563-fdbf416c7747/mzaf_13853719167130610517.plus.aac.p.m4a"
                 }
             ]
         }
@@ -112,6 +157,51 @@
             "danceability": 0.5,
             "acousticness": 0.5,
             "preview_url": ""
+        },
+        {
+            "id": "web_1869843691",
+            "title": "Reply",
+            "artist": "KZ & Kaguya(cv.Yuko Natsuyoshi)",
+            "album": "Cosmic Princess Kaguya!",
+            "genre": "Anime",
+            "mood": "neutral",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b3/1b/50/b31b50d3-c70b-3272-bfea-e370638593b3/4550752693389_cover.png/100x100bb.jpg",
+            "energy": 0.5,
+            "tempo": 110,
+            "valence": 0.5,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/f1/8b/b0f18b4d-4188-fbfe-147c-9514834380d5/mzaf_4669912705375990672.plus.aac.p.m4a"
+        },
+        {
+            "id": "web_1753851098",
+            "title": "Burning",
+            "artist": "Hitsujibungaku",
+            "album": "Burning - EP",
+            "genre": "Rock",
+            "mood": "intense",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ed/78/c8/ed78c8ce-7982-912a-12e4-8d7d049049f0/4547366693959.jpg/100x100bb.jpg",
+            "energy": 0.8,
+            "tempo": 130,
+            "valence": 0.5,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": ""
+        },
+        {
+            "id": "web_1680072565",
+            "title": "Oh No Darling!",
+            "artist": "Sarah Kinsley",
+            "album": "Oh No Darling! - Single",
+            "genre": "Pop",
+            "mood": "happy",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a6/ff/de/a6ffde4a-241d-d44c-cb89-ed9630cb3e79/23UMGIM35386.rgb.jpg/100x100bb.jpg",
+            "energy": 0.7,
+            "tempo": 120,
+            "valence": 0.8,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/31/27/1d312776-a4a6-52de-0c63-93be875a690b/mzaf_7589419884220146079.plus.aac.p.m4a"
         }
     ],
     "user_metadata": {
@@ -957,6 +1047,1061 @@
                     "mode": "General Discovery",
                     "source": "Global RAG (Internet)",
                     "seed_count": 5
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1869843691",
+                        "title": "Reply",
+                        "artist": "KZ & Kaguya(cv.Yuko Natsuyoshi)",
+                        "album": "Cosmic Princess Kaguya!",
+                        "genre": "Anime",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b3/1b/50/b31b50d3-c70b-3272-bfea-e370638593b3/4550752693389_cover.png/100x100bb.jpg",
+                        "energy": 0.5,
+                        "tempo": 110,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/f1/8b/b0f18b4d-4188-fbfe-147c-9514834380d5/mzaf_4669912705375990672.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "favorites",
+                    "song": {
+                        "id": "web_1869843691",
+                        "title": "Reply",
+                        "artist": "KZ & Kaguya(cv.Yuko Natsuyoshi)",
+                        "album": "Cosmic Princess Kaguya!",
+                        "genre": "Anime",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b3/1b/50/b31b50d3-c70b-3272-bfea-e370638593b3/4550752693389_cover.png/100x100bb.jpg",
+                        "energy": 0.5,
+                        "tempo": 110,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/f1/8b/b0f18b4d-4188-fbfe-147c-9514834380d5/mzaf_4669912705375990672.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Doppelganger",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shine as usual",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 6,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 6,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1753851098",
+                        "title": "Burning",
+                        "artist": "Hitsujibungaku",
+                        "album": "Burning - EP",
+                        "genre": "Rock",
+                        "mood": "intense",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ed/78/c8/ed78c8ce-7982-912a-12e4-8d7d049049f0/4547366693959.jpg/100x100bb.jpg",
+                        "energy": 0.8,
+                        "tempo": 130,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": ""
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "favorites",
+                    "song": {
+                        "id": "web_1702627144",
+                        "title": "more than words",
+                        "artist": "Hitsujibungaku",
+                        "album": "more than words - EP",
+                        "genre": "Rock",
+                        "mood": "intense",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ff/6b/19/ff6b1924-6db1-3151-a724-8d00c0f4c204/4547366642537.jpg/100x100bb.jpg",
+                        "energy": 0.8,
+                        "tempo": 130,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": ""
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "M\u00e4go de Oz",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "M\u00e4go de Oz",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "M\u00e4go de Oz",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "M\u00e4go de Oz",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "The Sustainer",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "M\u00e4go de Oz",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "The Sustainer",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "KZ",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Xanandra",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Mujer Amante",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Dama del Mar",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "M\u00e4go de Oz",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "The Sustainer",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "KZ",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "\u1793\u17b7\u179a\u1793\u17d2\u178a\u179a\u17cd (feat. KZ Tan)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "KZ",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "The Sustainer",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Rosa de los Vientos",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "KZ",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "The Sustainer",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Rosa de los Vientos",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "La Conquista",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "I'm Always Be with You (feat. KZ)",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Bohemian Rhapsody",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "KZ",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "The Sustainer",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Van a Rodar Cabezas",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 7,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 7,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 7,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 7,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "favorites",
+                    "song": {
+                        "id": "web_1726131787",
+                        "title": "Young Life",
+                        "artist": "Laura day romance",
+                        "album": "Young Life / Brighter Brighter - Single",
+                        "genre": "Rock",
+                        "mood": "intense",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/cf/b2/ab/cfb2abdd-8f44-ff1f-c3cc-31b11c432a5f/4525853504698.jpg/100x100bb.jpg",
+                        "energy": 0.8,
+                        "tempo": 130,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e6/a1/ba/e6a1ba11-3e00-d0f3-4563-fdbf416c7747/mzaf_13853719167130610517.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1680072565",
+                        "title": "Oh No Darling!",
+                        "artist": "Sarah Kinsley",
+                        "album": "Oh No Darling! - Single",
+                        "genre": "Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a6/ff/de/a6ffde4a-241d-d44c-cb89-ed9630cb3e79/23UMGIM35386.rgb.jpg/100x100bb.jpg",
+                        "energy": 0.7,
+                        "tempo": 120,
+                        "valence": 0.8,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/31/27/1d312776-a4a6-52de-0c63-93be875a690b/mzaf_7589419884220146079.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5,
+                    "requested_count": 40
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 8,
+                    "requested_count": 40
                 }
             }
         ],

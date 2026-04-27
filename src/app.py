@@ -495,32 +495,39 @@ def main():
                         st.audio(purl, format="audio/mp4")
 
                 with col_act:
+                    # Explanatory Popover
+                    with st.popover("ℹ️ Why this?"):
+                        st.write(row.get('explanation', "Matches your recent listening vibe!"))
+                        st.caption(f"Features: E:{row.get('energy'):.1f} | T:{row.get('tempo'):.0f} | V:{row.get('valence'):.1f}")
+
                     rating = st.feedback("stars", key=f"rate_{song_id}")
                     if rating is not None:
-                        log_interaction("rate_recommendation", {"song": row['title'], "rating": rating + 1})
+                        real_rating = rating + 1
+                        log_interaction("rate_recommendation", {"song": row['title'], "rating": real_rating})
+                        
+                        # DYNAMIC REACTION: 
+                        # If user gives 5 stars, temporarily add this song to seeds to influence next generation
+                        if real_rating == 5:
+                            st.toast(f"Model tuned! Finding more like '{row['title']}'...")
+                            new_seed = SongInfo(
+                                id=str(song_id),
+                                title=row['title'],
+                                artist=row['artist'],
+                                album=row.get('album', 'Unknown'),
+                                genre=row['genre'],
+                                mood=row['mood'],
+                                artwork_url=artwork,
+                                energy=row.get('energy', 0.5),
+                                tempo=row.get('tempo', row.get('tempo_bpm', 110.0)),
+                                valence=row.get('valence', 0.5),
+                                danceability=row.get('danceability', 0.5),
+                                acousticness=row.get('acousticness', 0.5)
+                            )
+                            # Add to liked_songs for the session to shift the centroid
+                            if new_seed.id not in [s.id for s in profile.liked_songs]:
+                                profile.liked_songs.append(new_seed)
+                        
                         st.success("Feedback saved!")
-                    
-                    if st.button("Add to Liked", key=f"rec_like_{song_id}"):
-                        new_song = SongInfo(
-                            id=str(song_id),
-                            title=row['title'],
-                            artist=row['artist'],
-                            album=row.get('album', 'Unknown'),
-                            genre=row['genre'],
-                            mood=row['mood'],
-                            artwork_url=artwork,
-                            energy=row.get('energy', 0.5),
-                            tempo=row.get('tempo', row.get('tempo_bpm', 110.0)),
-                            valence=row.get('valence', 0.5),
-                            danceability=row.get('danceability', 0.5),
-                            acousticness=row.get('acousticness', 0.5)
-                        )
-                        if new_song.id not in [s.id for s in profile.liked_songs]:
-                            profile.liked_songs.append(new_song)
-                            log_interaction("like_from_rec", {"song": asdict(new_song)})
-                            st.success("Liked!")
-                        else:
-                            st.info("Already in Liked Songs")
 
 if __name__ == "__main__":
     from dataclasses import asdict
