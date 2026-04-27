@@ -12,6 +12,13 @@ class SongInfo:
     genre: str = ""
     mood: str = ""
     artwork_url: str = ""
+    # Numerical features for KNN
+    energy: float = 0.5
+    tempo: float = 110.0
+    valence: float = 0.5
+    danceability: float = 0.5
+    acousticness: float = 0.5
+    preview_url: str = ""
 
 @dataclass
 class Playlist:

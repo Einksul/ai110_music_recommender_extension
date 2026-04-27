@@ -1,65 +1,117 @@
 {
     "name": "Einksul",
     "playlists": {
-        "Pop": {
-            "name": "Pop",
+        "favorites": {
+            "name": "favorites",
             "songs": [
                 {
-                    "id": "1",
-                    "title": "Sunrise City",
-                    "artist": "Neon Echo",
-                    "album": "Unknown",
-                    "genre": "pop",
-                    "mood": "happy"
+                    "id": "web_1721450223",
+                    "title": "Sunny",
+                    "artist": "Yorushika",
+                    "album": "Sunny - Single",
+                    "genre": "Alternative",
+                    "mood": "neutral",
+                    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9e/e4/3d/9ee43dd8-818c-c085-899c-c27a1e3b82cc/23UM1IM53496.rgb.jpg/100x100bb.jpg",
+                    "energy": 0.5,
+                    "tempo": 110,
+                    "valence": 0.5,
+                    "danceability": 0.5,
+                    "acousticness": 0.5,
+                    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/67/f1/7a/67f17aa9-2909-5a14-a949-31959c1d4d80/mzaf_13425942078361372642.plus.aac.p.m4a"
                 },
                 {
-                    "id": "30",
-                    "title": "Void Echo",
-                    "artist": "Deeper Space",
-                    "album": "Unknown",
-                    "genre": "ambient",
-                    "mood": "dark"
-                },
-                {
-                    "id": "29",
-                    "title": "Cloud Nine",
-                    "artist": "LoRoom",
-                    "album": "Unknown",
-                    "genre": "lofi",
-                    "mood": "happy"
-                }
-            ]
-        },
-        "Pop2": {
-            "name": "Pop2",
-            "songs": [
-                {
-                    "id": "1",
-                    "title": "Sunrise City",
-                    "artist": "Neon Echo",
-                    "album": "Unknown",
-                    "genre": "pop",
-                    "mood": "happy"
-                },
-                {
-                    "id": "30",
-                    "title": "Void Echo",
-                    "artist": "Deeper Space",
-                    "album": "Unknown",
-                    "genre": "ambient",
-                    "mood": "dark"
+                    "id": "web_1888137027",
+                    "title": "Blooming With you",
+                    "artist": "yonige",
+                    "album": "Blooming With you - Single",
+                    "genre": "Rock",
+                    "mood": "intense",
+                    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2f/62/3a/2f623ab5-c6fd-0848-918d-ed825b358199/4547366816051.jpg/100x100bb.jpg",
+                    "energy": 0.8,
+                    "tempo": 130,
+                    "valence": 0.5,
+                    "danceability": 0.5,
+                    "acousticness": 0.5,
+                    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/8f/9a/c08f9af6-eeb4-3249-aca6-d02b1c6d7b27/mzaf_7141227988188348859.plus.aac.p.m4a"
                 }
             ]
         }
     },
     "liked_songs": [
         {
-            "id": "1",
-            "title": "Sunrise City",
-            "artist": "Neon Echo",
-            "album": "Unknown",
-            "genre": "pop",
-            "mood": "happy"
+            "id": "web_1657318765",
+            "title": "Guitar, Loneliness and Blue Planet",
+            "artist": "kessoku band",
+            "album": "Kessoku Band",
+            "genre": "Anime",
+            "mood": "neutral",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/51/3b/00/513b003d-5583-4533-168b-f213c245b53f/4534530141828.jpg/100x100bb.jpg",
+            "energy": 0.5,
+            "tempo": 110,
+            "valence": 0.5,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d1/14/90/d1149047-7b3f-11e3-97c5-4ac52434d644/mzaf_13600435206444164514.plus.aac.p.m4a"
+        },
+        {
+            "id": "web_1657318551",
+            "title": "seisyun complex",
+            "artist": "kessoku band",
+            "album": "Kessoku Band",
+            "genre": "Anime",
+            "mood": "neutral",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/51/3b/00/513b003d-5583-4533-168b-f213c245b53f/4534530141828.jpg/100x100bb.jpg",
+            "energy": 0.5,
+            "tempo": 110,
+            "valence": 0.5,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b5/98/a8/b598a8cf-40f4-78cb-16cf-390488c247cd/mzaf_12752398875140434205.plus.aac.p.m4a"
+        },
+        {
+            "id": "web_1849339815",
+            "title": "dear april",
+            "artist": "isobel",
+            "album": "dear april - Single",
+            "genre": "Indie Pop",
+            "mood": "happy",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e4/12/ee/e412ee78-d0cb-8e0f-7099-22c9375fd5f7/7300346770968.jpg/100x100bb.jpg",
+            "energy": 0.7,
+            "tempo": 120,
+            "valence": 0.8,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": ""
+        },
+        {
+            "id": "web_1743238902",
+            "title": "No Problems",
+            "artist": "Ginger Root",
+            "album": "SHINBANGUMI",
+            "genre": "Indie Pop",
+            "mood": "happy",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/b3/60/1fb360aa-00a4-f83b-2f47-5a068640c2c5/45835.jpg/100x100bb.jpg",
+            "energy": 0.7,
+            "tempo": 120,
+            "valence": 0.8,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7f/e4/3b/7fe43b4e-33d1-afff-a89f-8df6e188d6e4/mzaf_13860905252489579519.plus.aac.p.m4a"
+        },
+        {
+            "id": "web_1878185177",
+            "title": "Spoken For",
+            "artist": "FLAVOR FOLEY",
+            "album": "Spoken For - Single",
+            "genre": "Pop",
+            "mood": "happy",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/11/e6/9711e6c9-76a4-fd80-b480-7fed1c4e42e2/199508892962_cover.jpg/100x100bb.jpg",
+            "energy": 0.7,
+            "tempo": 120,
+            "valence": 0.8,
+            "danceability": 0.5,
+            "acousticness": 0.5,
+            "preview_url": ""
         }
     ],
     "user_metadata": {
@@ -157,6 +209,754 @@
                         "genre": "lofi",
                         "mood": "happy"
                     }
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "seed_count": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Old Vinyl",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Old Vinyl",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Rooftop Lights",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Old Vinyl",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Rooftop Lights",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Old Vinyl",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Rooftop Lights",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "delete_playlist",
+                "details": {
+                    "name": "Pop"
+                }
+            },
+            {
+                "action": "delete_playlist",
+                "details": {
+                    "name": "Pop2"
+                }
+            },
+            {
+                "action": "unlike_song",
+                "details": {
+                    "song": "Sunrise City"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1657318765",
+                        "title": "Guitar, Loneliness and Blue Planet",
+                        "artist": "kessoku band",
+                        "album": "Kessoku Band",
+                        "genre": "Anime",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/51/3b/00/513b003d-5583-4533-168b-f213c245b53f/4534530141828.jpg/100x100bb.jpg",
+                        "energy": 0.5,
+                        "tempo": 110,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d1/14/90/d1149047-7b3f-11e3-97c5-4ac52434d644/mzaf_13600435206444164514.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1657318551",
+                        "title": "seisyun complex",
+                        "artist": "kessoku band",
+                        "album": "Kessoku Band",
+                        "genre": "Anime",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/51/3b/00/513b003d-5583-4533-168b-f213c245b53f/4534530141828.jpg/100x100bb.jpg",
+                        "energy": 0.5,
+                        "tempo": 110,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b5/98/a8/b598a8cf-40f4-78cb-16cf-390488c247cd/mzaf_12752398875140434205.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1657318884",
+                        "title": "If I could be a constellation",
+                        "artist": "kessoku band",
+                        "album": "Kessoku Band",
+                        "genre": "Anime",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/51/3b/00/513b003d-5583-4533-168b-f213c245b53f/4534530141828.jpg/100x100bb.jpg",
+                        "energy": 0.5,
+                        "tempo": 110,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/d8/38/46/d838469e-cb2a-adab-605a-b3e4746dcc5e/mzaf_5809369360557803293.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "favorites"
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "favorites",
+                    "song": {
+                        "id": "web_1721450223",
+                        "title": "Sunny",
+                        "artist": "Yorushika",
+                        "album": "Sunny - Single",
+                        "genre": "Alternative",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9e/e4/3d/9ee43dd8-818c-c085-899c-c27a1e3b82cc/23UM1IM53496.rgb.jpg/100x100bb.jpg",
+                        "energy": 0.5,
+                        "tempo": 110,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/67/f1/7a/67f17aa9-2909-5a14-a949-31959c1d4d80/mzaf_13425942078361372642.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Local Library",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "favorites",
+                    "song": {
+                        "id": "web_1888137027",
+                        "title": "Blooming With you",
+                        "artist": "yonige",
+                        "album": "Blooming With you - Single",
+                        "genre": "Rock",
+                        "mood": "intense",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2f/62/3a/2f623ab5-c6fd-0848-918d-ed825b358199/4547366816051.jpg/100x100bb.jpg",
+                        "energy": 0.8,
+                        "tempo": 130,
+                        "valence": 0.5,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/8f/9a/c08f9af6-eeb4-3249-aca6-d02b1c6d7b27/mzaf_7141227988188348859.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Local Library",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 3
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1849339815",
+                        "title": "dear april",
+                        "artist": "isobel",
+                        "album": "dear april - Single",
+                        "genre": "Indie Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e4/12/ee/e412ee78-d0cb-8e0f-7099-22c9375fd5f7/7300346770968.jpg/100x100bb.jpg",
+                        "energy": 0.7,
+                        "tempo": 120,
+                        "valence": 0.8,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": ""
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Local Library",
+                    "seed_count": 4
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1743238902",
+                        "title": "No Problems",
+                        "artist": "Ginger Root",
+                        "album": "SHINBANGUMI",
+                        "genre": "Indie Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/b3/60/1fb360aa-00a4-f83b-2f47-5a068640c2c5/45835.jpg/100x100bb.jpg",
+                        "energy": 0.7,
+                        "tempo": 120,
+                        "valence": 0.8,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7f/e4/3b/7fe43b4e-33d1-afff-a89f-8df6e188d6e4/mzaf_13860905252489579519.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5
+                }
+            },
+            {
+                "action": "unlike_song",
+                "details": {
+                    "song": "If I could be a constellation"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 4
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1878185177",
+                        "title": "Spoken For",
+                        "artist": "FLAVOR FOLEY",
+                        "album": "Spoken For - Single",
+                        "genre": "Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/11/e6/9711e6c9-76a4-fd80-b480-7fed1c4e42e2/199508892962_cover.jpg/100x100bb.jpg",
+                        "energy": 0.7,
+                        "tempo": 120,
+                        "valence": 0.8,
+                        "danceability": 0.5,
+                        "acousticness": 0.5,
+                        "preview_url": ""
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Doesn't Help",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Doesn't Help",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Comet Clusters",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Doesn't Help",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Comet Clusters",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shiver and Shake",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Doesn't Help",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Comet Clusters",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shiver and Shake",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Death",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Doesn't Help",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Comet Clusters",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shiver and Shake",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Death",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "It Doesn't Help",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Comet Clusters",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "When Something Is Gone",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Shiver and Shake",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Death",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 2
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 5
                 }
             }
         ],
