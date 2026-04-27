@@ -1,14 +1,15 @@
 import re
+import hashlib
+import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
 
 class LocalFeatureEstimator:
     """
     Zero-cost feature estimator that maps metadata to numerical song features.
-    Now expanded to 8 dimensions for more expressive recommendations.
+    Now with deterministic variance and jitter for high expressiveness.
     """
     
-    # Expanded genre mappings
     GENRE_MAP = {
         "rock": {"energy": 0.8, "tempo": 130, "mood": "intense", "valence": 0.5, "instrumentalness": 0.1},
         "metal": {"energy": 0.95, "tempo": 160, "mood": "intense", "valence": 0.3, "instrumentalness": 0.2},
@@ -27,7 +28,6 @@ class LocalFeatureEstimator:
         "ambient": {"energy": 0.2, "tempo": 60, "mood": "calm", "valence": 0.5, "instrumentalness": 0.9, "acousticness": 0.3},
     }
 
-    # Keyword modifiers
     KEYWORD_MODIFIERS = {
         r"\bacoustic\b": {"energy": -0.2, "acousticness": 0.8, "instrumentalness": 0.2},
         r"\bremix\b": {"energy": 0.1, "danceability": 0.1, "instrumentalness": 0.1},
@@ -39,13 +39,19 @@ class LocalFeatureEstimator:
         r"\binstrumental\b": {"instrumentalness": 0.9},
         r"\bkaraoke\b": {"instrumentalness": 0.8, "speechiness": -0.2},
         r"\basmr\b": {"speechiness": 0.9, "energy": -0.3, "mood": "calm"},
-        r"\bfeat\b": {"speechiness": 0.1}, # Features usually mean more vocals
+        r"\bfeat\b": {"speechiness": 0.1},
         r"\bvocals\b": {"instrumentalness": -0.5, "speechiness": 0.2},
     }
 
     @classmethod
+    def _generate_deterministic_offset(cls, seed_str, scale=0.1):
+        """Generates a pseudo-random float between -scale and +scale based on a string."""
+        hash_val = int(hashlib.md5(seed_str.encode()).hexdigest(), 16)
+        return ((hash_val % 2000) / 1000.0 - 1.0) * scale
+
+    @classmethod
     def estimate_features(cls, title, artist, genre):
-        # Start with defaults
+        # Base features
         features = {
             "energy": 0.5,
             "tempo": 110,
@@ -59,42 +65,50 @@ class LocalFeatureEstimator:
         }
 
         # 1. Apply Genre Mappings
-        genre_lower = genre.lower()
+        genre_lower = str(genre).lower()
         for g_key, g_vals in cls.GENRE_MAP.items():
             if g_key in genre_lower:
                 features.update(g_vals)
                 break
         
-        # 2. Apply Keyword Modifiers from Title
-        title_lower = title.lower()
+        # 2. Apply Keyword Modifiers
+        title_lower = str(title).lower()
         for pattern, mods in cls.KEYWORD_MODIFIERS.items():
             if re.search(pattern, title_lower):
                 for k, v in mods.items():
                     if isinstance(v, (int, float)):
-                        features[k] = max(0.0, min(1.0, features.get(k, 0.5) + v))
+                        features[k] = features.get(k, 0.5) + v
                     else:
                         features[k] = v
 
-        # Normalize Tempo (Simple 0-1 scaling for model usage later)
-        features["tempo_norm"] = features["tempo"] / 200.0
+        # 3. Add Deterministic Variance (The "Expressiveness" Fix)
+        # Use a combination of title and artist to make every song unique
+        unique_seed = f"{title}{artist}"
+        for feat in ["energy", "valence", "danceability", "acousticness", "instrumentalness", "speechiness", "liveness"]:
+            # Add unique offset based on song identity
+            offset = cls._generate_deterministic_offset(f"{unique_seed}{feat}", scale=0.15)
+            features[feat] = max(0.0, min(1.0, features[feat] + offset))
+        
+        # Unique Tempo jitter
+        tempo_offset = cls._generate_deterministic_offset(f"{unique_seed}tempo", scale=20)
+        features["tempo"] = max(50.0, min(220.0, features["tempo"] + tempo_offset))
 
+        # 4. Add subtle Gaussian Jitter for session-level variety
+        for feat in ["energy", "valence", "danceability", "acousticness"]:
+            features[feat] = max(0.0, min(1.0, features[feat] + random.uniform(-0.02, 0.02)))
+
+        features["tempo_norm"] = features["tempo"] / 200.0
         return features
 
 class SemanticFeatureExtractor:
-    """
-    Handles TF-IDF vectorization for semantic understanding of song metadata.
-    """
     def __init__(self):
         self.vectorizer = TfidfVectorizer(stop_words='english')
         self.is_fitted = False
 
     def prepare_metadata_string(self, song_info):
-        """Combines artist, title, and genre into a single searchable string."""
-        # song_info can be a SongInfo object or a dict from a row
         if hasattr(song_info, 'artist'):
             return f"{song_info.artist} {song_info.title} {song_info.genre}".lower()
         else:
-            # Handle case where song_info might be a Series or dict
             try:
                 artist = song_info.get('artist', '')
                 title = song_info.get('title', '')
@@ -104,8 +118,6 @@ class SemanticFeatureExtractor:
                 return ""
 
     def fit(self, songs_list):
-        """Fits the TF-IDF vectorizer on a list of items."""
-        # Fix: Use 'is not None' because pandas objects have ambiguous truth values
         texts = [self.prepare_metadata_string(s) for s in songs_list if s is not None]
         texts = [t for t in texts if t.strip()]
         if texts:
@@ -113,14 +125,10 @@ class SemanticFeatureExtractor:
             self.is_fitted = True
 
     def transform(self, items):
-        """Transforms items into TF-IDF vectors."""
         if not self.is_fitted:
             return None
-        
         if isinstance(items, list):
             texts = [self.prepare_metadata_string(s) for s in items]
         else:
-            # Single item
             texts = [self.prepare_metadata_string(items)]
-            
         return self.vectorizer.transform(texts)
