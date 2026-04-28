@@ -95,6 +95,29 @@
                     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e6/a1/ba/e6a1ba11-3e00-d0f3-4563-fdbf416c7747/mzaf_13853719167130610517.plus.aac.p.m4a"
                 }
             ]
+        },
+        "Test": {
+            "name": "Test",
+            "songs": [
+                {
+                    "id": "web_1876728648",
+                    "title": "Play Sick",
+                    "artist": "Yorushika",
+                    "album": "second person",
+                    "genre": "Alternative",
+                    "mood": "neutral",
+                    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/8b/c3/2e8bc3b7-6f8e-f722-5fdb-b69a7c8c6ac4/26UMGIM18610.rgb.jpg/100x100bb.jpg",
+                    "energy": 0.33970308780420017,
+                    "tempo": 97.78,
+                    "valence": 0.5759079604725045,
+                    "danceability": 0.6109609731592949,
+                    "acousticness": 0.545208603734085,
+                    "instrumentalness": 0.0,
+                    "speechiness": 0.0,
+                    "liveness": 0.22405,
+                    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/b4/ee/39b4ee87-d4d8-f56a-e3f5-2c2891c94c0d/mzaf_6711392205430374079.plus.aac.p.m4a"
+                }
+            ]
         }
     },
     "liked_songs": [
@@ -241,6 +264,24 @@
             "speechiness": 0.0,
             "liveness": 0.0,
             "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/31/27/1d312776-a4a6-52de-0c63-93be875a690b/mzaf_7589419884220146079.plus.aac.p.m4a"
+        },
+        {
+            "id": "web_1579829423",
+            "title": "lemonade",
+            "artist": "Chilli Beans.",
+            "album": "d a n c i n g  a l o n e - EP",
+            "genre": "J-Pop",
+            "mood": "happy",
+            "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/55/ab/40/55ab40ec-e036-fd69-0dfa-207e72411b49/ANTCD-A0000004974.jpg/100x100bb.jpg",
+            "energy": 0.581193904260153,
+            "tempo": 108.32,
+            "valence": 0.8766785834555438,
+            "danceability": 0.5892425651505812,
+            "acousticness": 0.5666227396686204,
+            "instrumentalness": 0.0829,
+            "speechiness": 0.11620000000000003,
+            "liveness": 0.11365,
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/c7/a2/63c7a21b-6f7f-fc4f-7470-8c7eb2727e14/mzaf_13095586456356364705.plus.aac.p.m4a"
         }
     ],
     "user_metadata": {
@@ -2580,6 +2621,490 @@
                     "source": "Global RAG (Internet)",
                     "seed_count": 8,
                     "requested_count": 10
+                }
+            },
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "delete_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Test",
+                    "song": {
+                        "id": "web_1876728648",
+                        "title": "Play Sick",
+                        "artist": "Yorushika",
+                        "album": "second person",
+                        "genre": "Alternative",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/8b/c3/2e8bc3b7-6f8e-f722-5fdb-b69a7c8c6ac4/26UMGIM18610.rgb.jpg/100x100bb.jpg",
+                        "energy": 0.37447488417069646,
+                        "tempo": 97.78,
+                        "valence": 0.5734289757567457,
+                        "danceability": 0.6187727095908341,
+                        "acousticness": 0.5117331173622337,
+                        "instrumentalness": 0.0,
+                        "speechiness": 0.0,
+                        "liveness": 0.22405,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/b4/ee/39b4ee87-d4d8-f56a-e3f5-2c2891c94c0d/mzaf_6711392205430374079.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1579829423",
+                        "title": "lemonade",
+                        "artist": "Chilli Beans.",
+                        "album": "d a n c i n g  a l o n e - EP",
+                        "genre": "J-Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/55/ab/40/55ab40ec-e036-fd69-0dfa-207e72411b49/ANTCD-A0000004974.jpg/100x100bb.jpg",
+                        "energy": 0.5972592111470968,
+                        "tempo": 108.32,
+                        "valence": 0.843255118120767,
+                        "danceability": 0.568507310138427,
+                        "acousticness": 0.5652139112420322,
+                        "instrumentalness": 0.0829,
+                        "speechiness": 0.11620000000000003,
+                        "liveness": 0.11365,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/c7/a2/63c7a21b-6f7f-fc4f-7470-8c7eb2727e14/mzaf_13095586456356364705.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1,
+                    "requested_count": 25
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "unlike_song",
+                "details": {
+                    "song": "lemonade"
+                }
+            },
+            {
+                "action": "remove_from_playlist",
+                "details": {
+                    "playlist": "Test",
+                    "song": "Play Sick"
+                }
+            },
+            {
+                "action": "delete_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Test",
+                    "song": {
+                        "id": "web_1876728648",
+                        "title": "Play Sick",
+                        "artist": "Yorushika",
+                        "album": "second person",
+                        "genre": "Alternative",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/8b/c3/2e8bc3b7-6f8e-f722-5fdb-b69a7c8c6ac4/26UMGIM18610.rgb.jpg/100x100bb.jpg",
+                        "energy": 0.37187685651933844,
+                        "tempo": 97.78,
+                        "valence": 0.5567896977997228,
+                        "danceability": 0.580933550192877,
+                        "acousticness": 0.5327991156608604,
+                        "instrumentalness": 0.0,
+                        "speechiness": 0.0,
+                        "liveness": 0.22405,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/b4/ee/39b4ee87-d4d8-f56a-e3f5-2c2891c94c0d/mzaf_6711392205430374079.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1579829423",
+                        "title": "lemonade",
+                        "artist": "Chilli Beans.",
+                        "album": "d a n c i n g  a l o n e - EP",
+                        "genre": "J-Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/55/ab/40/55ab40ec-e036-fd69-0dfa-207e72411b49/ANTCD-A0000004974.jpg/100x100bb.jpg",
+                        "energy": 0.5863036875665502,
+                        "tempo": 108.32,
+                        "valence": 0.839794433726116,
+                        "danceability": 0.578775174526397,
+                        "acousticness": 0.5926541855706238,
+                        "instrumentalness": 0.0829,
+                        "speechiness": 0.11620000000000003,
+                        "liveness": 0.11365,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/c7/a2/63c7a21b-6f7f-fc4f-7470-8c7eb2727e14/mzaf_13095586456356364705.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "delete_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "unlike_song",
+                "details": {
+                    "song": "lemonade"
+                }
+            },
+            {
+                "action": "create_playlist",
+                "details": {
+                    "name": "Test"
+                }
+            },
+            {
+                "action": "add_to_playlist",
+                "details": {
+                    "playlist": "Test",
+                    "song": {
+                        "id": "web_1876728648",
+                        "title": "Play Sick",
+                        "artist": "Yorushika",
+                        "album": "second person",
+                        "genre": "Alternative",
+                        "mood": "neutral",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/8b/c3/2e8bc3b7-6f8e-f722-5fdb-b69a7c8c6ac4/26UMGIM18610.rgb.jpg/100x100bb.jpg",
+                        "energy": 0.33970308780420017,
+                        "tempo": 97.78,
+                        "valence": 0.5759079604725045,
+                        "danceability": 0.6109609731592949,
+                        "acousticness": 0.545208603734085,
+                        "instrumentalness": 0.0,
+                        "speechiness": 0.0,
+                        "liveness": 0.22405,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/b4/ee/39b4ee87-d4d8-f56a-e3f5-2c2891c94c0d/mzaf_6711392205430374079.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "like_song",
+                "details": {
+                    "song": {
+                        "id": "web_1579829423",
+                        "title": "lemonade",
+                        "artist": "Chilli Beans.",
+                        "album": "d a n c i n g  a l o n e - EP",
+                        "genre": "J-Pop",
+                        "mood": "happy",
+                        "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/55/ab/40/55ab40ec-e036-fd69-0dfa-207e72411b49/ANTCD-A0000004974.jpg/100x100bb.jpg",
+                        "energy": 0.581193904260153,
+                        "tempo": 108.32,
+                        "valence": 0.8766785834555438,
+                        "danceability": 0.5892425651505812,
+                        "acousticness": 0.5666227396686204,
+                        "instrumentalness": 0.0829,
+                        "speechiness": 0.11620000000000003,
+                        "liveness": 0.11365,
+                        "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/c7/a2/63c7a21b-6f7f-fc4f-7470-8c7eb2727e14/mzaf_13095586456356364705.plus.aac.p.m4a"
+                    },
+                    "source": "Global"
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "Playlist-Specific",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 1,
+                    "requested_count": 10
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Play Sick",
+                    "rating": 3
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "Sabotage",
+                    "rating": 1
+                }
+            },
+            {
+                "action": "rate_recommendation",
+                "details": {
+                    "song": "You Only Live Once",
+                    "rating": 4
+                }
+            },
+            {
+                "action": "generate_recommendations",
+                "details": {
+                    "mode": "General Discovery",
+                    "source": "Global RAG (Internet)",
+                    "seed_count": 9,
+                    "requested_count": 14
                 }
             }
         ],

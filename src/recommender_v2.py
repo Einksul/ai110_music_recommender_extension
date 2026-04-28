@@ -279,7 +279,7 @@ class KNNRecommender:
                 reasons.append(f"Thematically similar to **{c['source_seed']}**")
             
             if f_data.get('speechiness', 0) > 0.7:
-                reasons.append("Matches your interest in spoken word/ASMR")
+                reasons.append("Matches your interest for lyrics")
             if f_data.get('instrumentalness', 0) > 0.8:
                 reasons.append("Matches your preference for instrumental tracks")
             if f_data.get('liveness', 0) > 0.7:
