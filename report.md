@@ -70,5 +70,13 @@ To deploy the application in a local environment:
 
 ---
 
+## Testing
+- Unit tests were heavily employed to check the functionality of key functions and outputs of the system.
+- Additional manual tests were employed to check the reliability and experience of the app.
+
+---
+
 ## Conclusion
-This project demonstrates that robust AI solutions can be achieved through disciplined engineering and strategic algorithmic blending rather than relying solely on high-compute infrastructure. By prioritizing **Explainable AI (XAI)** and **Human-in-the-Loop** feedback mechanisms, the system achieves a level of personalization and discovery variety typically reserved for larger, high-cost platforms. The resulting engine is a highly efficient, scalable, and user-centric discovery tool.
+While AI is very useful at getting thoughts into code, it can only be as good as the instructions they are given. Careful consideration is still needed in the architecture of the system and as well as deep knowledge of the field when implmenting the system. This was a small case study in creating a recommendation system without a neural network that requires training. Experience and knowledge is still needed to craft these systems. Additionally, it is crucial to acknowledge the role of project manager. Testing still needs to be done and guidance is crucial. AI is not good enough to self-check or read minds yet. 
+
+This is not a complex architecture. It is built through low level statistical analysis and clustering algorithms. As such the power of this system is good, but not cutting edge. The system more or less recommends things extremely close to what has already been saved by the user. Having a more expressive feature set may increase the diversity of the recommendations. As the AI is such a low level, there is not much a worry for it to be misused. 
