@@ -8,12 +8,12 @@ The Music Recommender Extension is a sophisticated discovery and management plat
 ## Architecture Overview
 The system utilizes a modular, three-tier architecture to ensure scalability and real-time responsiveness:
 
-1.  **Interface Layer (Streamlit)**: Provides an interactive, web-based dashboard for user profile management, playlist curation, and global data exploration.
-2.  **Logic Layer (Ensemble Engine & RAG)**: 
-    - **RAG Pipeline**: Dynamically generates optimized search queries from user history to retrieve high-quality candidates from global datasets.
-    - **Ensemble Engine**: Processes data through three concurrent models: **Item-to-Item Similarity**, **Multi-Centroid Clustering (K-Means)**, and **Semantic Text Matching (TF-IDF)**.
-    - **MMR Ranking**: Implements *Maximal Marginal Relevance* to mathematically balance relevance with novelty, preventing artist concentration and ensuring variety.
-3.  **Persistence Layer (JSON)**: Ensures session continuity by serializing user metadata, preferences, and interaction history into secure local profiles.
+1.  The **Interface Layer (Streamlit)** provides an interactive, web-based dashboard for user profile management, playlist curation, and global data exploration.
+2.  The **Logic Layer (Ensemble Engine & RAG)** includes:
+    - The **RAG Pipeline** dynamically generates optimized search queries from user history to retrieve high-quality candidates from global datasets.
+    - The **Ensemble Engine** processes data through three concurrent models: **Item-to-Item Similarity**, **Multi-Centroid Clustering (K-Means)**, and **Semantic Text Matching (TF-IDF)**.
+    - The **MMR Ranking** implements *Maximal Marginal Relevance* to mathematically balance relevance with novelty, preventing artist concentration and ensuring variety.
+3.  The **Persistence Layer (JSON)** ensures session continuity by serializing user metadata, preferences, and interaction history into secure local profiles.
 
 ---
 
@@ -22,7 +22,7 @@ To deploy the application in a local environment:
 
 1.  **Repository Setup**:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Einksul/ai110_music_recommender_extension.git
     cd ai110_music_recommender_extension
     ```
 2.  **Dependency Installation**:
@@ -40,33 +40,33 @@ To deploy the application in a local environment:
 ## Sample Interactions and System Output
 
 ### 1. Zero-Cost Feature Estimation
-- **Input**: Search for "Solo Acoustic Guitar."
-- **System Output**: Automated identification of instrumental and acoustic characteristics.
-- **AI Logic**: The `LocalFeatureEstimator` assigns a high **Instrumentalness** score and low **Energy**. The transparency module provides the following justification: *"Matches established preference for acoustic and instrumental compositions."*
+- The **Input** was a search for "Solo Acoustic Guitar."
+- The **System Output** provided automated identification of instrumental and acoustic characteristics.
+- For the **AI Logic**, the `LocalFeatureEstimator` assigns a high **Instrumentalness** score and low **Energy**, with the transparency module providing the following justification: *"Matches established preference for acoustic and instrumental compositions."*
 
 ### 2. Explainable Global Discovery
-- **Input**: Request for 10 recommendations based on a high-tempo electronic playlist.
-- **System Output**: 10 diverse selections across multiple high-energy sub-genres.
-- **AI Logic**: The engine identifies specific matches, such as one track being *"Thematically similar to [Reference Track]"* (Semantic) and another *"Sharing an identical energy profile with [Reference Track]"* (Numerical).
+- The **Input** was a request for 10 recommendations based on a high-tempo electronic playlist.
+- The **System Output** returned 10 diverse selections across multiple high-energy sub-genres.
+- For the **AI Logic**, the engine identifies specific matches, such as one track being *"Thematically similar to [Reference Track]"* (Semantic) and another *"Sharing an identical energy profile with [Reference Track]"* (Numerical).
 
 ### 3. Real-Time Preference Adaptation
-- **Input**: User provides a 5-star rating to a suggested ambient track.
-- **System Output**: Model optimization notification.
-- **AI Logic**: The system executes a "Preference Shift," temporarily incorporating the high-rated track into the active seed set to refine the parameters for subsequent recommendation generations.
+- The **Input** occurred when the user provides a 5-star rating to a suggested ambient track.
+- The **System Output** was a model optimization notification.
+- For the **AI Logic**, the system executes a "Preference Shift," temporarily incorporating the high-rated track into the active seed set to refine the parameters for subsequent recommendation generations.
 
 ---
 
 ## Design Decisions and Strategic Trade-offs
-- **KNN Ensemble vs. Deep Learning**: A **KNN-based Ensemble** was selected over Neural Network architectures to maintain a zero-cost infrastructure. This approach delivers high precision with smaller datasets while eliminating the need for expensive training hardware or recurring API token fees.
-- **MMR for Diversification**: To prevent the "filter bubble" effect where a single artist dominates results, **Maximal Marginal Relevance (MMR)** was implemented. This algorithm penalizes redundancy and ensures a mathematically diverse output.
-- **Local Feature Estimation (LFE)**: To avoid dependency on third-party audio analysis APIs (e.g., Spotify), a local NLP-based estimation engine was developed. This module extracts 8 distinct musical dimensions directly from available metadata.
+- Regarding **KNN Ensemble vs. Deep Learning**, a **KNN-based Ensemble** was selected over Neural Network architectures to maintain a zero-cost infrastructure, delivering high precision with smaller datasets while eliminating the need for expensive training hardware or recurring API token fees.
+- For **MMR for Diversification**, **Maximal Marginal Relevance (MMR)** was implemented to prevent the "filter bubble" effect where a single artist dominates results by penalizing redundancy and ensuring a mathematically diverse output.
+- **Local Feature Estimation (LFE)** was developed to avoid dependency on third-party audio analysis APIs (e.g., Spotify), with the local NLP-based estimation engine extracting 8 distinct musical dimensions directly from available metadata.
 
 ---
 
 ## Testing and Quality Assurance
-- **Functional Success**: The Item-to-Item strategy effectively resolved "Centroid Washout," enabling the system to support users with diametrically opposed tastes (e.g., Classical and Industrial Rock) without compromising the relevance of either.
-- **Optimization Challenges**: Initial iterations exhibited "Deterministic Bias," providing repetitive results. This was mitigated through the implementation of **Randomized Multi-Query RAG** and a **Variety Sampling Pool**.
-- **Observability**: The inclusion of an "Explainable AI" layer significantly improved the perceived quality of suggestions by providing users with clear logical justifications for each match.
+- **Functional Success** was achieved as the Item-to-Item strategy effectively resolved "Centroid Washout," enabling the system to support users with diametrically opposed tastes (e.g., Classical and Industrial Rock) without compromising the relevance of either.
+- **Optimization Challenges** were encountered where initial iterations exhibited "Deterministic Bias," providing repetitive results, which was mitigated through the implementation of **Randomized Multi-Query RAG** and a **Variety Sampling Pool**.
+- **Observability** was enhanced by the inclusion of an "Explainable AI" layer, which significantly improved the perceived quality of suggestions by providing users with clear logical justifications for each match.
 
 ---
 
